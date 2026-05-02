@@ -1,260 +1,403 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
-    <title>iA Auditoria Sistemas</title>
+    <title>COMSERCOM - Inteligencia Operativa</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     
     <style>
-        body { font-family: "Poppins", sans-serif; font-size: 13px; background: #fafafa; color: #444; overflow-x: hidden; }
+        /* PALETA CORPORATIVA COMSERCOM (Basada en aiDomot) */
+        :root {
+            --bg-principal: #08080A;
+            --primario-neon: #00E5FF; /* Cyan Tech */
+            --secundario-tech: #7000FF; /* Violeta Profundo */
+            --acentos: #FFD400; /* Amarillo de Precisión */
+            --gris-panel: #121214;
+            --borde-tech: #2A2A2E;
+        }
+
+        body { 
+            font-family: "Poppins", sans-serif; 
+            font-size: 13px; 
+            background: var(--bg-principal); 
+            color: #d1d1d1; 
+            overflow-x: hidden; 
+        }
         
-        /* Layout */
+        /* ESTRUCTURA PRINCIPAL */
         .wrapper { display: flex; align-items: stretch; width: 100%; }
         
-        /* Sidebar Vertical Izquierdo */
+        /* SIDEBAR (MENÚ LATERAL) */
         #sidebar { 
-            background: #1a1a1a; 
-            min-width: 200px; max-width: 200px; 
-            color: #fff; transition: all 0.3s; min-height: 100vh; 
+            background: #000; 
+            min-width: 240px; max-width: 240px; 
+            border-right: 1px solid var(--borde-tech);
+            transition: all 0.3s; min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
         }
-        #sidebar .logo { padding: 15px; font-size: 16px; color: #fff; font-weight: 700; border-bottom: 1px solid #333; text-align: center;}
-        #sidebar ul li a { padding: 10px 15px; color: #bbb; display: block; font-size: 11px; text-decoration: none; border-bottom: 1px solid #222; }
-        #sidebar ul li a:hover, #sidebar ul li.active > a { color: #fff; background: #2f89fc; }
-
-        /* Contenido Principal */
-        #content { width: 100%; padding: 0; }
-        .inner-content { padding: 20px; }
-
-        /* Men� Superior (aiEXO, aiData, EdgeComp) */
-        .top-nav { background: #fff; border-bottom: 1px solid #ddd; padding: 10px 20px; display: flex; justify-content: flex-end; gap: 15px; }
-        .top-nav a { color: #2f89fc; font-weight: 600; font-size: 12px; text-decoration: none; }
-
-        /* Ajuste M�vil */
-        @media (max-width: 768px) {
-            #sidebar { min-width: 60px; max-width: 60px; }
-            #sidebar .logo, #sidebar span:not(.fa) { display: none; }
-            #sidebar ul li a { text-align: center; padding: 15px 0; }
-            #sidebar .fa { font-size: 18px; margin: 0 !important; }
-        }
-
-        /* Formularios y Visor */
-        .form-group { margin-bottom: 8px; }
-        .form-control { height: 32px !important; font-size: 12px !important; padding: 4px 8px !important; }
-        label { margin-bottom: 1px; font-weight: 600; font-size: 10px; text-transform: uppercase; color: #666; }
-        .media-box { background: #f0f0f0; border: 1px solid #ddd; padding: 10px; border-radius: 4px; margin-top: 10px; }
         
-        /* Tabla del Visor */
-        .visor-container { margin-top: 30px; background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 10px; }
-        .table-custom { width: 100%; font-size: 11px; }
-        .table-custom th { background: #eee; padding: 5px; }
-        .table-custom td { padding: 5px; border-bottom: 1px solid #eee; }
+        #sidebar .logo-area { 
+            padding: 25px; 
+            border-bottom: 1px solid var(--borde-tech);
+            text-align: center;
+        }
+        
+        .logo-text { 
+            font-weight: 800; 
+            font-size: 18px; 
+            color: #fff; 
+            letter-spacing: 1px;
+            display: block;
+        }
+        
+        .logo-text span { color: var(--primario-neon); }
 
-        .banner-item { border-left: 4px solid #2f89fc; background: #fff; padding: 10px; margin-bottom: 10px; border: 1px solid #eee; border-left: 4px solid #2f89fc; font-size: 12px; }
+        #sidebar ul.menu-links li a { 
+            padding: 14px 20px; 
+            color: #999; 
+            display: block; 
+            font-size: 11px; 
+            text-transform: uppercase; 
+            border-bottom: 1px solid #111; 
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        
+        #sidebar ul.menu-links li a:hover, 
+        #sidebar ul.menu-links li.active > a { 
+            color: #fff; 
+            background: linear-gradient(90deg, var(--secundario-tech), transparent); 
+            border-left: 4px solid var(--primario-neon); 
+        }
+
+        /* NAVEGACIÓN SUPERIOR (SUBDOMINIOS) */
+        .top-nav { 
+            background: rgba(8, 8, 10, 0.9); 
+            backdrop-filter: blur(15px); 
+            border-bottom: 1px solid var(--borde-tech); 
+            padding: 15px 30px; 
+            display: flex; 
+            justify-content: flex-end; 
+            gap: 25px; 
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .top-nav a { 
+            color: #aaa; 
+            font-weight: 600; 
+            font-size: 10px; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            text-decoration: none; 
+        }
+        .top-nav a:hover { color: var(--primario-neon); }
+
+        /* CONTENIDO DINÁMICO */
+        #content { width: 100%; padding: 0; }
+        .inner-content { padding: 30px; }
+        
+        .hero-banner { 
+            width: 100%; height: 260px; 
+            background-size: cover; background-position: center; 
+            border-radius: 12px; border: 1px solid var(--borde-tech);
+            margin-bottom: 30px;
+            display: flex; align-items: flex-end; padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-banner::after {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+        }
+        .hero-text { position: relative; z-index: 2; }
+
+        /* ESTILOS DE FORMULARIO */
+        .form-card { 
+            background: var(--gris-panel); 
+            padding: 25px; 
+            border: 1px solid var(--borde-tech); 
+            border-radius: 10px; 
+        }
+        .form-control { 
+            background: #000 !important; 
+            border: 1px solid #333 !important; 
+            color: #fff !important; 
+            font-size: 13px !important;
+        }
+        label { color: var(--primario-neon); font-size: 10px; text-transform: uppercase; font-weight: 700; }
+
+        /* FOOTER CORPORATIVO */
+        .footer-comsercom {
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid var(--borde-tech);
+            font-size: 10px;
+            color: #666;
+            text-align: center;
+        }
+
+        /* ANIMACIONES */
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            #sidebar { min-width: 70px; }
+            #sidebar .logo-text, #sidebar span { display: none; }
+            .hero-banner { height: 150px; }
+        }
     </style>
 </head>
 <body>
 
     <div class="wrapper">
         <nav id="sidebar">
-            <div class="logo">comsercom.com</div>
-            <ul class="list-unstyled components">
-                <li class="active"><a href="#" onclick="showSection('inicio')"><span class="fa fa-home mr-2"></span> <span>Inicio</span></a></li>
-                <li><a href="#" onclick="showSection('Finanzas')"><span class="fa fa-university mr-2"></span> <span>Finanzas</span></a></li>
-                <li><a href="#" onclick="showSection('Industria')"><span class="fa fa-industry mr-2"></span> <span>Industria</span></a></li>
-                <li><a href="#" onclick="showSection('Comercio')"><span class="fa fa-shopping-cart mr-2"></span> <span>Comercio</span></a></li>
-                <li><a href="#" onclick="showSection('Salud')"><span class="fa fa-heartbeat mr-2"></span> <span>Salud</span></a></li>
-                <li><a href="#" onclick="showSection('Legales')"><span class="fa fa-gavel mr-2"></span> <span>Legales</span></a></li>
-                <li><a href="#" onclick="showSection('Inmobiliaria')"><span class="fa fa-building mr-2"></span> <span>Inmobiliaria</span></a></li>
+            <div class="logo-area">
+                <div class="logo-text">COMSER<span>COM</span></div>
+                <small style="font-size: 8px; color: #444;">SMART INFRASTRUCTURE</small>
+            </div>
+            <ul class="list-unstyled menu-links">
+                <li class="active" id="li-home"><a href="#" onclick="navegar('home')"><i class="fa fa-th-large mr-3"></i> <span>Dashboard</span></a></li>
+                <li id="li-servicios"><a href="#" onclick="navegar('servicios')"><i class="fa fa-cogs mr-3"></i> <span>Servicios de IA</span></a></li>
+                <li id="li-clientes"><a href="#" onclick="navegar('clientes')"><i class="fa fa-users mr-3"></i> <span>Gestión Clientes</span></a></li>
+                <li id="li-proyectos"><a href="#" onclick="navegar('proyectos')"><i class="fa fa-rocket mr-3"></i> <span>Proyectos</span></a></li>
+                <li id="li-reportes"><a href="#" onclick="navegar('reportes')"><i class="fa fa-pie-chart mr-3"></i> <span>Reportes</span></a></li>
+                <li id="li-seguridad"><a href="#" onclick="navegar('seguridad')"><i class="fa fa-shield mr-3"></i> <span>Seguridad</span></a></li>
             </ul>
-            <div class="px-2 mt-4">
-                <button class="btn btn-primary btn-block btn-sm" onclick="exportCSV()"><i class="fa fa-download"></i> CSV</button>
+            <div class="mt-auto p-3">
+                <button class="btn btn-outline-info btn-sm w-100" style="font-size: 9px;" onclick="exportarDatos()">
+                    <i class="fa fa-file-excel-o mr-1"></i> EXPORTAR DATA
+                </button>
             </div>
         </nav>
 
         <div id="content">
             <div class="top-nav">
-                <a href="#" onclick="showSection('aiEXO')">aiEXO</a>
-                <a href="#" onclick="showSection('aiData')">aiData</a>
-                <a href="#" onclick="showSection('EdgeComp')">EdgeComp</a>
+                <a href="#" onclick="navegar('ia-core')">ia.comsercom.com</a>
+                <a href="#" onclick="navegar('data-hub')">data.comsercom.com</a>
+                <a href="#" onclick="navegar('cloud')">cloud.comsercom.com</a>
             </div>
 
             <div class="inner-content">
-                <div id="app-body">
+                <div id="main-app" class="fade-in">
                     </div>
 
-                <div class="visor-container" id="visor-registros">
-                    <h6 style="font-size: 12px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Registros en Memoria (Offline)</h6>
-                    <div class="table-responsive">
-                        <table class="table-custom" id="tabla-datos">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Tipo</th>
-                                    <th>Cliente</th>
-                                    <th>Acci�n</th>
-                                </tr>
-                            </thead>
-                            <tbody id="lista-visitas">
-                                </tbody>
-                        </table>
+                <div class="mt-5">
+                    <h6 class="text-white small mb-3"><i class="fa fa-hdd-o mr-2"></i> REGISTROS EN MEMORIA LOCAL (INDEXED-DB)</h6>
+                    <div class="form-card">
+                        <div class="table-responsive">
+                            <table class="table table-dark table-sm table-hover mb-0" style="font-size: 11px;">
+                                <thead>
+                                    <tr style="color: var(--acentos);">
+                                        <th>TIMESTAMP</th>
+                                        <th>CATEGORÍA</th>
+                                        <th>ENTIDAD/CLIENTE</th>
+                                        <th>ESTADO</th>
+                                        <th>OPERACIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabla-registros">
+                                    </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
+
+                <footer class="footer-comsercom">
+                    <div class="mb-2">
+                        <strong>COMSERCOM.COM</strong> - Soluciones Integrales de Ingeniería y Tecnología Aplicada
+                    </div>
+                    <div>
+                        <i class="fa fa-map-marker mr-1"></i> Bolivia - Centro de Datos Operativo | 
+                        <i class="fa fa-lock ml-2 mr-1"></i> Sistema de Orquestación Protegido
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
-        // --- 1. BASE DE DATOS ---
-        let db;
-        const request = indexedDB.open("ExoGlobalDB", 2);
-        request.onupgradeneeded = e => {
-            db = e.target.result;
-            if(!db.objectStoreNames.contains("visitas")) {
-                db.createObjectStore("visitas", { keyPath: "id" });
+        // --- 1. CONFIGURACIÓN DE BASE DE DATOS LOCAL ---
+        let dbLocal;
+        const peticionDB = indexedDB.open("ComsercomDB", 1);
+
+        peticionDB.onupgradeneeded = e => {
+            dbLocal = e.target.result;
+            if(!dbLocal.objectStoreNames.contains("operaciones")) {
+                dbLocal.createObjectStore("operaciones", { keyPath: "id" });
             }
         };
-        request.onsuccess = e => { 
-            db = e.target.result; 
-            actualizarVisor(); 
+
+        peticionDB.onsuccess = e => {
+            dbLocal = e.target.result;
+            refrescarTabla();
         };
 
-        // --- 2. NAVEGACI�N ---
-        function showSection(section) {
-            const body = document.getElementById('app-body');
-            if(section === 'inicio' || section === 'aiEXO' || section === 'aiData' || section === 'EdgeComp') {
-                let titulo = section.toUpperCase();
-                let b1 = "AI Agents & Automation", b2 = "Virtual Assistants", b3 = "Smart Orchestration";
-                
-                if(section === 'aiData') { b1 = "ERP Integration"; b2 = "MRP Data Flow"; b3 = "CRM Systems"; }
-                if(section === 'EdgeComp') { b1 = "Cloud Infrastructure"; b2 = "Cyber Security"; b3 = "Network Edge"; }
+        // --- 2. MOTOR DE NAVEGACIÓN (SINGLE PAGE) ---
+        function navegar(seccion) {
+            $('.menu-links li').removeClass('active');
+            $(`#li-${seccion}`).addClass('active');
 
-                body.innerHTML = `
-                    <h6>${titulo}</h6>
-                    <div class="banner-item"><b>1.</b> ${b1}</div>
-                    <div class="banner-item"><b>2.</b> ${b2}</div>
-                    <div class="banner-item"><b>3.</b> ${b3}</div>
-                `;
-            } else {
-                renderForm(section);
+            const visor = document.getElementById('main-app');
+            let html = "";
+
+            switch(seccion) {
+                case 'home':
+                    html = `
+                        <div class="hero-banner" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80')">
+                            <div class="hero-text">
+                                <span class="badge badge-info mb-2">SISTEMA ACTIVO</span>
+                                <h1 class="text-white font-weight-bold">Panel Central COMSERCOM</h1>
+                                <p class="text-light small">Orquestación de procesos y monitoreo de infraestructura en tiempo real.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"><div class="form-card mb-3 text-center"><h3 class="text-info">85%</h3><small>EFICIENCIA IA</small></div></div>
+                            <div class="col-md-4"><div class="form-card mb-3 text-center"><h3 class="text-success">24/7</h3><small>UPTIME SISTEMA</small></div></div>
+                            <div class="col-md-4"><div class="form-card mb-3 text-center"><h3 class="text-warning">1.2ms</h3><small>LATENCIA EDGE</small></div></div>
+                        </div>`;
+                    break;
+
+                case 'servicios':
+                    renderizarFormulario("Servicios de Ingeniería");
+                    return;
+
+                default:
+                    html = `
+                        <div class="hero-banner" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=1200&q=80')">
+                            <div class="hero-text">
+                                <h2 class="text-white">${seccion.toUpperCase()}</h2>
+                                <p class="text-muted">Módulo en proceso de análisis de datos...</p>
+                            </div>
+                        </div>`;
             }
+            visor.innerHTML = html;
         }
 
-        // --- 3. FORMULARIO ---
-        function renderForm(tipo) {
-            const id = new Date().toISOString().replace(/\D/g, '').slice(0, 12);
-            document.getElementById('app-body').innerHTML = `
-                <h6 class="text-primary">Nueva Visita: ${tipo}</h6>
-                <form id="exoForm">
-                    <input type="hidden" id="fid" value="${id}">
-                    <div class="form-group"><label>Nombre Cliente</label>
-                        <div class="input-group">
-                            <input type="text" id="fnome" class="form-control">
-                            <div class="input-group-append"><button type="button" class="btn btn-dark btn-sm" onclick="dictar('fnome')"><i class="fa fa-microphone"></i></button></div>
+        // --- 3. RENDERIZADO DE FORMULARIO DE CAPTURA ---
+        function renderizarFormulario(titulo) {
+            const tempId = Date.now();
+            const contenedor = document.getElementById('main-app');
+            contenedor.innerHTML = `
+                <h4 class="text-white mb-4"><i class="fa fa-edit mr-2"></i> Captura de Datos: ${titulo}</h4>
+                <div class="form-card fade-in">
+                    <form id="formOperativo">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label>Identificador de Entidad (Cliente/Banco)</label>
+                                <input type="text" id="entidad" class="form-control" placeholder="Nombre de la institución">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Categoría Operativa</label>
+                                <select id="categoria" class="form-control">
+                                    <option>Auditoría de Seguridad</option>
+                                    <option>Desarrollo IA</option>
+                                    <option>Infraestructura Cloud</option>
+                                    <option>Soporte Crítico</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group"><label>WhatsApp</label><input type="tel" id="fwhatsapp" class="form-control"></div>
-                    <div class="form-group"><label>Notas</label><textarea id="fdesc" class="form-control" style="height:40px!important"></textarea>
-                        <button type="button" class="btn btn-link btn-sm p-0" onclick="dictar('fdesc')">Dictar Notas</button>
-                    </div>
-                    <div class="media-box">
-                        <button type="button" class="btn btn-light border btn-sm" onclick="capturarGeo()">🎯 GPS</button>
-                        <button type="button" class="btn btn-light border btn-sm" onclick="document.getElementById('fcam').click()">📊 Foto</button>
-                        <button type="button" class="btn btn-light border btn-sm" id="btnRec" onclick="gestionarAudio()">🧠 Audio</button>
-                        <input type="file" id="fcam" accept="image/*" capture="camera" style="display:none">
-                        <div id="status-info" style="font-size:10px; color:blue; margin-top:5px;"></div>
-                    </div>
-                    <button type="button" class="btn btn-success btn-block mt-3 btn-sm" onclick="guardarRegistro('${tipo}')">GUARDAR DATOS</button>
-                </form>
+                        <div class="form-group">
+                            <label>Detalles Técnicos / Notas de Campo</label>
+                            <textarea id="notas" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <button type="button" class="btn btn-outline-warning btn-block btn-sm" onclick="capturarVoz('notas')">
+                                    <i class="fa fa-microphone mr-2"></i> DICTAR NOTAS
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-primary btn-block btn-sm" onclick="guardarDato('${titulo}')">
+                                    GUARDAR EN LOCAL
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             `;
         }
 
-        // --- 4. FUNCIONES T�CNICAS ---
-        function dictar(id) {
-            const Speech = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if(!Speech) return alert("No compatible");
-            const rec = new Speech(); rec.lang = 'es-ES'; rec.start();
-            rec.onresult = e => { document.getElementById(id).value = e.results[0][0].transcript; };
+        // --- 4. FUNCIONES DE HARDWARE Y DATOS ---
+        function capturarVoz(idCampo) {
+            const reconocimiento = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!reconocimiento) return alert("Reconocimiento de voz no soportado.");
+            const reco = new reconocimiento();
+            reco.lang = 'es-ES';
+            reco.start();
+            reco.onresult = e => { document.getElementById(idCampo).value = e.results[0][0].transcript; };
         }
 
-        function capturarGeo() {
-            navigator.geolocation.getCurrentPosition(p => {
-                document.getElementById('status-info').innerText = `Ubicaci�n: ${p.coords.latitude.toFixed(4)}, ${p.coords.longitude.toFixed(4)}`;
-            });
-        }
-
-        function gestionarAudio() {
-            // L�gica simplificada de feedback
-            document.getElementById('status-info').innerText = "Grabando... (Simulado)";
-            setTimeout(() => { document.getElementById('status-info').innerText = "Audio guardado."; }, 2000);
-        }
-
-        function guardarRegistro(tipo) {
-            const data = {
-                id: document.getElementById('fid').value,
-                tipo: tipo,
-                cliente: document.getElementById('fnome').value,
-                tel: document.getElementById('fwhatsapp').value,
-                obs: document.getElementById('fdesc').value,
-                geo: document.getElementById('status-info').innerText
+        function guardarDato(cat) {
+            const registro = {
+                id: Date.now(),
+                fecha: new Date().toLocaleString(),
+                categoria: document.getElementById('categoria').value || cat,
+                entidad: document.getElementById('entidad').value || "N/A",
+                notas: document.getElementById('notas').value,
+                estado: "PENDIENTE_SYNC"
             };
-            const tx = db.transaction("visitas", "readwrite");
-            tx.objectStore("visitas").add(data);
-            tx.oncomplete = () => { 
-                actualizarVisor();
-                showSection('inicio');
+
+            const transaccion = dbLocal.transaction("operaciones", "readwrite");
+            transaccion.objectStore("operaciones").add(registro);
+            transaccion.oncomplete = () => {
+                alert("Dato almacenado localmente con éxito.");
+                refrescarTabla();
+                navegar('home');
             };
         }
 
-        // --- 5. VISOR ---
-        function actualizarVisor() {
-            const lista = document.getElementById('lista-visitas');
-            lista.innerHTML = "";
-            const tx = db.transaction("visitas", "readonly");
-            tx.objectStore("visitas").getAll().onsuccess = e => {
-                e.target.result.forEach(r => {
-                    lista.innerHTML += `
+        function refrescarTabla() {
+            const cuerpoTabla = document.getElementById('tabla-registros');
+            cuerpoTabla.innerHTML = "";
+            
+            const store = dbLocal.transaction("operaciones", "readonly").objectStore("operaciones");
+            store.getAll().onsuccess = e => {
+                e.target.result.forEach(reg => {
+                    cuerpoTabla.innerHTML += `
                         <tr>
-                            <td>${r.id}</td>
-                            <td>${r.tipo}</td>
-                            <td>${r.cliente}</td>
-                            <td><button class="btn btn-danger btn-sm p-0 px-1" onclick="borrarRegistro('${r.id}')">x</button></td>
+                            <td>${reg.fecha}</td>
+                            <td><span class="badge badge-dark text-info border border-info">${reg.categoria}</span></td>
+                            <td>${reg.entidad}</td>
+                            <td><small class="text-warning">${reg.estado}</small></td>
+                            <td><button class="btn btn-link text-danger p-0" onclick="borrarDato(${reg.id})"><i class="fa fa-trash"></i></button></td>
                         </tr>
                     `;
                 });
             };
         }
 
-        function borrarRegistro(id) {
-            if(confirm("�Borrar?")) {
-                const tx = db.transaction("visitas", "readwrite");
-                tx.objectStore("visitas").delete(id);
-                tx.oncomplete = () => actualizarVisor();
+        function borrarDato(id) {
+            if(confirm("¿Eliminar registro local?")) {
+                dbLocal.transaction("operaciones", "readwrite").objectStore("operaciones").delete(id).onsuccess = () => refrescarTabla();
             }
         }
 
-        function exportCSV() {
-            const tx = db.transaction("visitas", "readonly");
-            tx.objectStore("visitas").getAll().onsuccess = e => {
-                const results = e.target.result;
-                if(results.length === 0) return alert("Sin datos");
-                let csv = "\uFEFFID,TIPO,CLIENTE,TELEFONO,NOTAS,GEO\n";
-                results.forEach(r => {
-                    csv += `${r.id},${r.tipo},${r.cliente},${r.tel},"${r.obs.replace(/\n/g,' ')}","${r.geo}"\n`;
+        function exportarDatos() {
+            dbLocal.transaction("operaciones", "readonly").objectStore("operaciones").getAll().onsuccess = e => {
+                const datos = e.target.result;
+                if(datos.length === 0) return alert("No hay datos para exportar.");
+                
+                let csvContent = "data:text/csv;charset=utf-8,\uFEFFID;FECHA;CATEGORIA;ENTIDAD;NOTAS\n";
+                datos.forEach(r => {
+                    csvContent += `${r.id};${r.fecha};${r.categoria};${r.entidad};${r.notas}\n`;
                 });
-                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-                const a = document.createElement("a");
-                a.href = URL.createObjectURL(blob);
-                a.download = `EXO_EXPORT_${new Date().getTime()}.csv`;
-                a.click();
+                
+                const encodedUri = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "COMSERCOM_DATA_EXPORT.csv");
+                document.body.appendChild(link);
+                link.click();
             };
         }
 
-        showSection('inicio');
+        // Iniciar en Home
+        navegar('home');
     </script>
 </body>
 </html>
