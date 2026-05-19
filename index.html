@@ -8,6 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+	<!-- Icono de Font Awesome  WHATSAPP -->
+	<link rel="stylesheet" href="https://cloudflare.com">
+
+	<div id="whatsapp-float" class="whatsapp-btn">
+    	<i class="fab fa-whatsapp"></i>
+	</div>
+
     <style>
         /* ==========================================================================
            VARIABLES DE DISEÑO Y PALETA CORPORATIVA AVANZADA
@@ -377,6 +384,55 @@
             /* Ocultar botón disparador de menú en versión escritorio */
             .menu-toggle { display: none; }
         }
+       /* ==========================================================================
+           WHATSAPP
+           ========================================================================== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Transición suave para el cambio de opacidad */
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+/* Animación de Latido */
+.heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@keyframes heartbeat {
+    from { transform: scale(1); }
+    10% { transform: scale(0.91); }
+    17% { transform: scale(0.98); }
+    33% { transform: scale(0.87); }
+    45% { transform: scale(1); }
+}
+
+/* Estado de semi-transparencia */
+.semi-transparent {
+    opacity: 0.5;
+}
+
+/* Efecto hover: Recupera brillo al pasar el mouse */
+.whatsapp-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
     </style>
 </head>
 <body>
@@ -880,6 +936,27 @@
             mainContent.innerHTML = htmlContent;
             closeMobileMenu();
         }
+
+       /* ==========================================================================
+           WHATSAPP
+           ========================================================================== */
+	document.addEventListener("DOMContentLoaded", function() {
+    	const wsIcon = document.getElementById('whatsapp-float');
+
+    	// Activa el latido al cargar
+    	wsIcon.classList.add('heartbeat');
+
+    	// A los 5 segundos cambia el estado
+    	setTimeout(() => {
+        wsIcon.classList.remove('heartbeat');
+        wsIcon.classList.add('semi-transparent');
+    	}, 5000);
+
+    	// Acción al hacer clicLink a WhatsApp 
+    	wsIcon.addEventListener('click', () => {
+        window.open('https://wa.me/59168068040');
+    	});
+	});
     </script>
 </body>
 </html>
