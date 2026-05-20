@@ -3,387 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>COMSERCOM - Inteligencia Operativa & Soberanía Tecnológica</title>
+    <title>COMSERCOM | Edge-to-Edge Information Sovereignty</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PRE-CARGA CRÍTICA DE FUENTES PARA EVITAR FOUT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400&family=Inter:wght@200;300;400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- JSON-LD SCHEMA PARA SEO MODERNO / IA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "COMSERCOM",
+      "url": "https://www.comsercom.com",
+      "logo": "https://www.comsercom.com/logo.png",
+      "description": "Empresa especialista en tecnolog&iacute;as de la informaci&oacute;n de borde a borde y Soberan&iacute;a Privada.",
+      "founder": {
+        "@type": "Person",
+        "name": "ai Expert"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Edge Computing Infrastructure" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Implementations" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Forensic Auditory & Security" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software Builder" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed IT Services" } }
+        ]
+      }
+    }
+    </script>
+	
 	<!-- Icono de Font Awesome  WHATSAPP -->
 	<link rel="stylesheet" href="https://cloudflare.com">
 
 	<div id="whatsapp-float" class="whatsapp-btn">
     	<i class="fab fa-whatsapp"></i>
 	</div>
-
     <style>
-        /* ==========================================================================
-           VARIABLES DE DISEÑO Y PALETA CORPORATIVA AVANZADA
-           ========================================================================== */
+        /* VARIABLES CSS ROOT */
         :root {
-            --bg-principal: #060608;
-            --bg-secundario: #0d0d11;
-            --bg-tarjeta: #131318;
-            --primario-neon: #00E5FF; /* Cyan Ciberborde */
-            --secundario-tech: #7000FF; /* Violeta Cuántico */
-            --acentos: #FFD400; /* Amarillo Alerta de Precisión */
-            --borde-tech: #222228;
-            --texto-claro: #E4E4E9;
-            --texto-oscuro: #8F8F9D;
-            --sidebar-width: 260px;
-            --header-height: 65px;
-            --subnav-height: 50px;
-            --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-main: #0d1117;
+            --bg-sidebar: #161b22;
+            --bg-card: #1f242d;
+            --accent-cyan: #00f2fe;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            
+            --font-title: 'Barlow Condensed', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-ui: 'Poppins', sans-serif;
+            
+            --header-h: 65px;
+            --subnav-h: 50px;
+            --sidebar-w: 260px;
+            --sidebar-w-collapsed: 80px;
         }
 
-        /* ==========================================================================
-           RESETEO GENERAL Y ENFOQUE FIRST-MOBILE
-           ========================================================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html, body {
-            background-color: var(--bg-principal);
-            color: var(--texto-claro);
-            font-size: 13px; /* Tipografía base compacta para Mobile-First */
-            line-height: 1.5;
+        /* RESET & BASE (Mobile-First) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 14px;
             overflow-x: hidden;
-            width: 100%;
+            -webkit-font-smoothing: antialiased;
         }
-
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-title); font-weight: 400; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        button { border: none; background: none; cursor: pointer; font-family: inherit; }
+        button { border: none; background: none; cursor: pointer; font-family: inherit; color: inherit; }
 
-        /* ==========================================================================
-           HEADER SUPERIOR FIJO
-           ========================================================================== */
-        .top-header {
-            height: var(--header-height);
-            background: rgba(6, 6, 8, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--borde-tech);
+        /* BANNER ALERTA SUPERIOR */
+        .top-alert {
+            position: fixed;
+            top: var(--header-h);
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #8b0000, #ff0000);
+            color: #fff;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 900;
+            font-family: var(--font-ui);
+            font-size: 12px;
+            overflow: hidden;
+        }
+        .top-alert .scrolling-text {
+            white-space: nowrap;
+            animation: scrollText 15s linear infinite;
+        }
+        .top-alert .close-btn {
+            position: absolute;
+            right: 15px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        @keyframes scrollText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* TOP HEADER */
+        .header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            height: var(--header-h);
+            background-color: rgba(22, 27, 34, 0.85);
+            backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 15px;
-            position: fixed;
-            top: 0;
-            width: 100%;
             z-index: 1000;
+            border-bottom: 1px solid #30363d;
         }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Hamburguesa posicionada a la izquierda junto al logo en móvil */
-        .menu-toggle {
-            color: var(--primario-neon);
-            font-size: 22px;
-            padding: 5px;
-            display: block;
-        }
-
-        .logo-text {
-            font-weight: 800;
-            font-size: 17px;
-            color: #fff;
-            letter-spacing: 1px;
-            cursor: pointer;
-        }
-        .logo-text span { color: var(--primario-neon); }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* Botón de idioma */
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        .menu-btn { font-size: 20px; color: var(--accent-cyan); display: block; }
+        .brand h1 { font-size: 20px; font-weight: 300; letter-spacing: 1px; color: var(--text-primary); }
+        .brand h1 span { color: var(--accent-cyan); font-weight: 400; }
+        .brand p { font-size: 10px; color: var(--text-secondary); font-family: var(--font-ui); margin-top:-3px; }
+        .header-right { display: flex; align-items: center; gap: 15px; }
         .lang-toggle {
-            color: #fff;
-            font-size: 12px;
-            font-weight: 700;
-            border: 1px solid var(--borde-tech);
-            padding: 6px 12px;
-            border-radius: 6px;
-            background: var(--bg-secundario);
-            transition: var(--transicion);
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            display: flex; gap: 5px; background: var(--bg-card);
+            padding: 4px 8px; border-radius: 4px; border: 1px solid #30363d;
+            font-size: 12px; font-weight: 600;
         }
-        .lang-toggle:hover {
-            border-color: var(--primario-neon);
-            color: var(--primario-neon);
+        .lang-toggle button.active { color: var(--accent-cyan); }
+        .download {
+            display: none; /* Only desktop */
+            font-family: var(--font-ui); font-size: 12px;
+            border: 1px solid var(--accent-cyan); color: var(--accent-cyan);
+            padding: 5px 12px; border-radius: 4px; transition: 0.3s;
         }
 
-        /* ==========================================================================
-           NAVEGACIÓN DE SUBDOMINIOS HORIZONTAL (SIN EXTENSIÓN)
-           ========================================================================== */
+        /* SUBNAV HORIZONTAL */
         .subnav {
             position: fixed;
-            top: var(--header-height);
-            width: 100%;
-            height: var(--subnav-height);
-            background: var(--bg-secundario);
-            border-bottom: 1px solid var(--borde-tech);
+            top: calc(var(--header-h) + 35px); /* Header + Banner */
+            left: 0; width: 100%;
+            height: var(--subnav-h);
+            background: var(--bg-main);
+            border-bottom: 1px solid #30363d;
+            z-index: 800;
             display: flex;
             align-items: center;
+            justify-content: flex-end; /* Alineación a la derecha */
             overflow-x: auto;
             white-space: nowrap;
-            padding: 0 10px;
-            z-index: 999;
-            scrollbar-width: none; 
+            padding: 0 15px;
+            scrollbar-width: none; /* Firefox */
         }
         .subnav::-webkit-scrollbar { display: none; }
-
         .subnav a {
-            color: var(--texto-oscuro);
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            padding: 8px 14px;
-            margin-right: 4px;
-            border-radius: 5px;
-            transition: var(--transicion);
+            font-family: var(--font-ui); font-size: 13px; font-weight: 300;
+            padding: 5px 15px; color: var(--text-secondary);
+            border-radius: 20px; margin-right: 5px; transition: 0.3s;
         }
-        .subnav a.active, .subnav a:hover {
-            color: var(--primario-neon);
-            background: rgba(0, 229, 255, 0.08);
+        .subnav a:hover, .subnav a.active {
+            background: rgba(0, 242, 254, 0.1); color: var(--accent-cyan);
         }
 
-        /* ==========================================================================
-           ESTRUCTURA WRAPPER Y SIDEBAR ALINEADO A LA IZQUIERDA
-           ========================================================================== */
-        .main-wrapper {
-            display: flex;
-            flex-direction: column;
-            margin-top: calc(var(--header-height) + var(--subnav-height));
-            flex: 1;
-            position: relative;
-            width: 100%;
-        }
-
-        /* Menú lateral vertical: Alineado a la izquierda */
+        /* SIDEBAR LATERAL */
         .sidebar {
             position: fixed;
-            left: -100%; /* Totalmente fuera de pantalla en móvil por defecto */
-            top: calc(var(--header-height) + var(--subnav-height));
-            width: var(--sidebar-width);
-            height: calc(100vh - var(--header-height) - var(--subnav-height));
-            background: #09090c;
-            border-right: 1px solid var(--borde-tech);
+            top: 0; left: -100%;
+            width: var(--sidebar-w); height: 100vh;
+            background: var(--bg-sidebar);
+            z-index: 2000;
+            transition: left 0.3s ease, width 0.3s ease;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.5);
+            display: flex; flex-direction: column;
             overflow-y: auto;
-            transition: var(--transicion);
-            z-index: 998;
-            display: flex;
-            flex-direction: column;
         }
-
-        /* Activación limpia del menú lateral izquierdo */
         .sidebar.active { left: 0; }
-
-        /* Capa oscura protectora de fondo para interacción móvil */
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 997;
-            backdrop-filter: blur(4px);
-        }
-        .sidebar-overlay.active { display: block; }
-
-        .sidebar-title {
-            padding: 18px 15px 10px;
-            font-size: 10px;
-            color: var(--texto-oscuro);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--borde-tech);
-        }
-
-        .menu-links li a {
-            padding: 14px 18px;
-            color: var(--texto-oscuro);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 12px;
-            border-bottom: 1px solid #121216;
-            transition: var(--transicion);
-        }
-        .menu-links li a:hover, 
-        .menu-links li a.active {
-            color: #fff;
-            background: linear-gradient(90deg, rgba(112, 0, 255, 0.12), transparent);
-            border-left: 4px solid var(--primario-neon);
-        }
-
-        /* ==========================================================================
-           ÁREA DE CONTENIDO DINÁMICO
-           ========================================================================== */
-        .content-area {
-            flex: 1;
-            padding: 16px;
-            width: 100%;
-            animation: vistaEntrada 0.4s ease-out;
-        }
-
-        @keyframes vistaEntrada {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Hero banner estilizado */
-        .hero-banner {
-            width: 100%;
-            min-height: 160px;
-            background: linear-gradient(135deg, var(--bg-secundario) 0%, #050507 100%);
-            border-radius: 10px;
-            border: 1px solid var(--borde-tech);
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-banner::before {
-            content: ""; position: absolute; top: -50%; right: -50%; width: 150%; height: 150%;
-            background: radial-gradient(circle, rgba(112, 0, 255, 0.08) 0%, transparent 65%);
-            z-index: 1;
-        }
-        .hero-text { position: relative; z-index: 2; width: 100%; }
-        .hero-title { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.3; }
-        .hero-desc { font-size: 12px; color: var(--texto-claro); line-height: 1.6; }
         
-        .badge-div {
-            display: inline-block; padding: 3px 8px; font-size: 9px;
-            background: rgba(0, 229, 255, 0.08); color: var(--primario-neon);
-            border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 4px;
-            margin-bottom: 8px; font-weight: 700; letter-spacing: 0.8px;
+        .profile-sec {
+            padding: 30px 20px; text-align: center;
+            border-bottom: 1px solid #30363d;
+        }
+        .profile-img-wrap {
+            width: 80px; height: 80px; margin: 0 auto 15px;
+            border-radius: 50%; padding: 3px;
+            border: 2px solid var(--accent-cyan);
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; background: var(--bg-card);
+        }
+        .profile-img-wrap img, .profile-img-wrap svg {
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+        }
+        .profile-sec h2 { font-size: 18px; color: var(--text-primary); }
+        .profile-sec p { font-size: 12px; color: var(--accent-cyan); font-family: var(--font-ui); }
+
+        .nav-links { padding: 20px 0; flex-grow: 1; }
+        .nav-links li a {
+            display: flex; align-items: center; gap: 15px;
+            padding: 12px 25px; font-size: 14px; font-weight: 300;
+            color: var(--text-primary); transition: 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-links li a:hover, .nav-links li a.active {
+            background: rgba(0, 242, 254, 0.05);
+            border-left-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+        .nav-links li a i { font-size: 16px; width: 20px; text-align: center; }
+
+        .collapse-btn {
+            display: none; /* Only desktop */
+            padding: 15px; text-align: center; background: #0d1117;
+            color: var(--text-secondary); cursor: pointer; border-top: 1px solid #30363d;
         }
 
-        /* Tarjeta estática base */
-        .main-card {
-            background: var(--bg-tarjeta);
-            border: 1px solid var(--borde-tech);
-            border-radius: 10px;
+        /* OVERLAY MÓVIL */
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.7); z-index: 1500;
+            display: none; opacity: 0; transition: opacity 0.3s;
+        }
+        .overlay.active { display: block; opacity: 1; }
+
+        /* MAIN CONTENT */
+        .main-wrapper {
+            padding-top: calc(var(--header-h) + 35px + var(--subnav-h) + 20px);
+            padding-left: 15px; padding-right: 15px; padding-bottom: 50px;
+            min-height: 100vh;
+            transition: margin-left 0.3s ease;
+        }
+        .content-header { margin-bottom: 30px; }
+        .content-header h2 { font-size: 26px; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 10px; }
+        .content-header p { font-size: 14px; line-height: 1.6; color: var(--text-primary); }
+        
+        .grid-container {
+            display: grid; grid-template-columns: 1fr; gap: 20px;
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border-radius: 6px;
             padding: 20px;
-            margin-bottom: 24px;
+            border-left: 3px solid var(--accent-cyan);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
         }
+        .card h3 { font-size: 18px; margin-bottom: 10px; color: #fff; }
+        .card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
 
-        /* ==========================================================================
-           SISTEMA DE BANNERS TEMÁTICOS COMERCIALES DINÁMICOS
-           ========================================================================== */
+        /* DETALLE DE SUB-ENLACES (NUEVO) */
+        .back-btn {
+            background: none; border: none; color: var(--text-secondary);
+            font-size: 13px; display: inline-flex; align-items: center; gap: 8px;
+            cursor: pointer; transition: 0.2s; margin-bottom: 20px; font-family: var(--font-ui);
+        }
+        .back-btn:hover { color: var(--accent-cyan); }
+
+        .item-detail-hero {
+            position: relative; border-radius: 8px; overflow: hidden; margin-bottom: 30px;
+            border-left: 4px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            background: #000;
+        }
+        .item-detail-hero img {
+            width: 100%; height: 250px; object-fit: cover; display: block; 
+            opacity: 0.5; transition: transform 5s ease;
+        }
+        .item-detail-hero:hover img { transform: scale(1.05); opacity: 0.6; }
+        .hero-text-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            background: linear-gradient(to top, rgba(13,17,23,1) 0%, rgba(13,17,23,0) 100%);
+            padding: 40px 20px 20px;
+        }
+        .hero-text-overlay p {
+            font-size: 15px; color: #fff; font-weight: 300; line-height: 1.6; 
+            max-width: 900px; text-shadow: 1px 1px 5px #000;
+        }
+        .marketing-grid {
+            display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px;
+        }
+        .marketing-card {
+            padding: 20px; border: 1px solid #30363d; border-radius: 6px; 
+            background: rgba(31, 36, 45, 0.4); transition: 0.3s;
+        }
+        .marketing-card:hover { border-color: var(--accent-cyan); transform: translateY(-3px); }
+        .marketing-card h4 { color: #fff; margin-bottom: 10px; font-size: 15px; }
+        .marketing-card p { font-size: 12px; color: var(--text-secondary); }
+
+        /* COMMERCIAL GRID (BANNERS) */
         .commercial-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Apilados por defecto en Mobile First */
-            gap: 16px;
-            margin-top: 20px;
+            margin-top: 50px; display: grid; grid-template-columns: 1fr; gap: 20px;
         }
-
-        .banner-item {
-            background: #15151c;
-            border: 1px solid var(--borde-tech);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: var(--transicion);
-            position: relative;
-            display: flex;
-            flex-direction: column;
+        .banner-card {
+            background: var(--bg-card); border-radius: 8px; overflow: hidden; position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-        .banner-item:hover {
-            transform: translateY(-4px);
-            border-color: var(--primario-neon);
-            box-shadow: 0 8px 24px rgba(0, 229, 255, 0.05);
-        }
-
-        .banner-media-box {
-            width: 100%;
-            height: 130px; /* Tamaño móvil controlado */
-            position: relative;
-            background: #09090c;
-            overflow: hidden;
-        }
-        .banner-img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: var(--transicion);
-            filter: brightness(0.85);
-        }
-        .banner-item:hover .banner-img { transform: scale(1.04); filter: brightness(1); }
-
+        .banner-img { width: 100%; height: 160px; object-fit: cover; }
         .offer-tag {
-            position: absolute; top: 10px; left: 10px;
-            background: var(--secundario-tech); color: #fff;
-            padding: 2px 8px; font-size: 9px; font-weight: 700;
-            border-radius: 4px; border: 1px solid rgba(255,255,255,0.2);
-            text-transform: uppercase; letter-spacing: 0.5px;
+            position: absolute; top: 10px; right: 10px; background: var(--accent-cyan);
+            color: #000; font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 3px; text-transform: uppercase;
         }
-
-        .banner-info { padding: 14px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .banner-h3 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 6px; }
-        .banner-p { font-size: 11px; color: var(--texto-oscuro); line-height: 1.4; }
-
-        /* Elemento interactivo de multimedia simulada */
-        .media-action-bar {
-            margin-top: 10px; padding-top: 8px; border-top: 1px solid #1d1d26;
+        .banner-content { padding: 15px; }
+        .banner-content h4 { font-size: 16px; margin-bottom: 5px; color: #fff; }
+        .banner-content p { font-size: 12px; color: var(--text-secondary); margin-bottom: 15px; }
+        .banner-action {
             display: flex; justify-content: space-between; align-items: center;
-            font-size: 10px; color: var(--primario-neon); font-weight: 500;
+            border-top: 1px solid #30363d; padding-top: 10px; color: var(--text-primary);
+        }
+        .banner-action i { cursor: pointer; transition: 0.2s; }
+        .banner-action i:hover { color: var(--accent-cyan); }
+
+        /* FOOTER UNIVERSAL */
+        footer {
+            background: var(--bg-card); border-top: 1px solid #30363d;
+            padding: 30px 15px; text-align: center;
+        }
+        .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px; }
+        .footer-links a { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; font-family: var(--font-ui); }
+        .footer-links a:hover { color: var(--accent-cyan); }
+        .footer-sublinks { margin-bottom: 20px; }
+        .footer-sublinks a { font-size: 11px; margin: 0 8px; color: #58a6ff; }
+        .copyright { font-size: 10px; color: #484f58; }
+
+        /* ANIMACIONES */
+        .fade-in {
+            animation: fadeIn 0.4s ease forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* ==========================================================================
-           MEDIA QUERIES - OPTIMIZACIÓN Y CONTROL COMPLETO DE VERSIÓN PC
-           ========================================================================== */
+        /* MEDIA QUERIES (DESKTOP > 992px) */
         @media (min-width: 992px) {
-            html, body { font-size: 14px; }
-
-            /* Re-organización estructural en PC: Sidebar fijo a la izquierda */
-            .main-wrapper {
-                flex-direction: row;
-            }
-
-            .sidebar {
-                left: 0; right: auto;
-                position: fixed;
-                width: var(--sidebar-width);
-                background: var(--bg-secundario);
-                border-right: 1px solid var(--borde-tech);
-                border-left: none;
-            }
-
-            .content-area {
-                margin-left: var(--sidebar-width); /* Deja espacio para el menú lateral izquierdo */
-                margin-right: 0;
-                padding: 35px 40px;
-            }
-
-            /* Corrección del vacío visual en PC: Grid comercial de 3 columnas perfectas */
-            .commercial-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
-
-            .banner-media-box {
-                height: 160px; /* Banners más inmersivos y altos en PC */
-            }
-
-            .hero-title { font-size: 26px; }
-            .hero-desc { font-size: 14px; }
+            body { font-size: 15px; }
+            .menu-btn { display: none; }
+            .download { display: inline-block; }
             
-            /* Ocultar botón disparador de menú en versión escritorio */
-            .menu-toggle { display: none; }
+            .sidebar { left: 0; }
+            .collapse-btn { display: block; }
+            
+            /* Ajuste de Barras Superiores (Alineación con Sidebar) */
+            .header, .subnav, .top-alert {
+                left: var(--sidebar-w);
+                width: calc(100% - var(--sidebar-w));
+                transition: left 0.3s ease, width 0.3s ease;
+            }
+            body.collapsed-sidebar .header,
+            body.collapsed-sidebar .subnav,
+            body.collapsed-sidebar .top-alert {
+                left: var(--sidebar-w-collapsed);
+                width: calc(100% - var(--sidebar-w-collapsed));
+            }
+
+            /* Sidebar icon-only mode */
+            .sidebar.collapsed { width: var(--sidebar-w-collapsed); }
+            .sidebar.collapsed .profile-sec h2, 
+            .sidebar.collapsed .profile-sec p, 
+            .sidebar.collapsed .nav-links span { display: none; }
+            .sidebar.collapsed .profile-img-wrap { width: 40px; height: 40px; }
+            
+            .main-wrapper { margin-left: var(--sidebar-w); padding-top: calc(var(--header-h) + 35px + var(--subnav-h) + 40px); padding-left: 40px; padding-right: 40px; }
+            .sidebar.collapsed ~ .main-wrapper { margin-left: var(--sidebar-w-collapsed); }
+            
+            .grid-container { grid-template-columns: repeat(2, 1fr); }
+            .commercial-grid { grid-template-columns: repeat(3, 1fr); }
+            .marketing-grid { grid-template-columns: repeat(3, 1fr); }
+            .item-detail-hero img { height: 350px; }
+            .content-header h2 { font-size: 32px; }
+            .card p { font-size: 14px; }
         }
+
        /* ==========================================================================
            WHATSAPP
            ========================================================================== */
@@ -437,505 +431,489 @@
 </head>
 <body>
 
-    <div class="app-container">
-        <header class="top-header">
-            <div class="logo-area">
-                <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Abrir Menú de Enlaces">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                </button>
-                <div class="logo-text" onclick="loadContent('home', 'main')">COMSER<span>COM</span></div>
-            </div>
-            <div class="header-actions">
-                <button class="lang-toggle" onclick="toggleLanguage()" id="btn-lang" aria-label="Cambiar Idioma">
-                    <i class="fa-solid fa-globe"></i> <span id="lang-text">ES</span>
-                </button>
-            </div>
-        </header>
-
-        <nav class="subnav" id="subnav-container">
-            </nav>
-
-        <div class="main-wrapper">
-            <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleMobileMenu()"></div>
-            
-            <aside class="sidebar" id="sidebar">
-                <div class="sidebar-title" id="sidebar-title">Especialidades</div>
-                <ul class="menu-links" id="sidebar-menu">
-                    </ul>
-            </aside>
-
-            <main class="content-area" id="main-content">
-                </main>
-        </div>
+    <!-- BANNERS & NAVIGATION -->
+    <div id="top-banner" class="top-alert">
+        <div class="scrolling-text">Proteja sus datos financieros con nuestro sistema inteligente de Prevenci&oacute;n de Riesgos con iA Privada <a href="#" onclick="navigate('forensic')" style="text-decoration:underline; font-weight:bold;">(Ver m&aacute;s)</a></div>
+        <button class="close-btn" onclick="document.getElementById('top-banner').style.display='none'; document.documentElement.style.setProperty('--header-h', '65px'); document.querySelector('.subnav').style.top='65px';">&#10005;</button>
     </div>
 
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <div class="brand">
+                <h1>COMSER<span>[COM]</span></h1>
+                <p id="h-slogan">Sovereignty Ecosystem</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="download "><i class="fa-solid fa-download"></i> Descargar</button>
+            <div class="lang-toggle">
+                <button id="btn-es" class="active" onclick="changeLang('es')">ES</button>
+                <span style="color:#30363d">|</span>
+                <button id="btn-en" onclick="changeLang('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="subnav">
+        <a href="#" onclick="navigate('home')" id="subnav-home" class="active">inicio</a>
+        <a href="#" onclick="navigate('edgecom')" id="subnav-edgecom">edgecom</a>
+        <a href="#" onclick="navigate('aidomot')" id="subnav-aidomot">aidomot</a>
+        <a href="#" onclick="navigate('forensic')" id="subnav-forensic">forensic</a>
+        <a href="#" onclick="navigate('owncode')" id="subnav-owncode">owncode</a>
+        <a href="#" onclick="navigate('support')" id="subnav-support">support</a>
+    </nav>
+
+    <div class="overlay" id="mobile-overlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="profile-sec">
+            <div class="profile-img-wrap">
+                <!-- Fallback SVG in case image fails -->
+                <img src="img1.jpg" alt="Profile" onerror="this.outerHTML='<svg viewBox=\'0 0 24 24\' fill=\'#00f2fe\'><path d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/></svg>'">
+            </div>
+            <h2>ai Expert</h2>
+            <p>iToT Architect</p>
+        </div>
+        <ul class="nav-links" id="sidebar-menu">
+            <!-- Inyectado dinámicamente -->
+        </ul>
+        <div class="collapse-btn" onclick="collapseSidebar()">
+            <i class="fa-solid fa-chevron-left" id="collapse-icon"></i>
+        </div>
+    </aside>
+
+    <main class="main-wrapper" id="main-content">
+        <!-- Render dinámico -->
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#" onclick="navigate('edgecom')">edgecom</a>
+            <a href="#" onclick="navigate('aidomot')">aidomot</a>
+            <a href="#" onclick="navigate('forensic')">forensic</a>
+            <a href="#" onclick="navigate('owncode')">owncode</a>
+            <a href="#" onclick="navigate('support')">support</a>
+        </div>
+        <div class="footer-sublinks">
+            <a href="#">Privacy</a>
+            <a href="#">Term of Services</a>
+            <a href="#">Corp Policies</a>
+            <a href="#">Contactos</a>
+        </div>
+        <p class="copyright">Copyright@2026 COMSERCOM. Todos los derechos reservados.</p>
+    </footer>
+
     <script>
-        /**
-         * ESTADO ORQUESTADOR CENTRAL (Single Page Application State)
-         */
-        const appState = {
-            lang: 'es',          // Idioma activo nativo (es / en)
-            currentSub: 'home',  // Subdominio/Sección global en foco
-            currentLink: 'main'  // Enlace o pestaña interna de especialidad activa
-        };
-
-        /**
-         * BANCO DE DATOS INTEGRADO COMPLETO: TEXTOS, BANNERS Y OFERTAS COMERCIALES
-         */
-        const siteData = {
-            home: {
-                id: 'home',
-                icon: 'fa-cube',
-                title: { 
-                    es: "Soberanía Privada y Segura de la Información de Borde a Borde", 
-                    en: "Edge-to-Edge Private and Secure Information Sovereignty" 
+        // DICCIONARIO DE DATOS ESTRUCTURADO Y CODIFICADO
+        const resumeData = {
+            es: {
+                home: {
+                    title: "Soberan&iacute;a Privada y Segura de la Informaci&oacute;n de Borde a Borde",
+                    summary: "En un entorno global donde el control del dato es el activo m&aacute;s cr&iacute;tico, COMSERCOM ofrece una soluci&oacute;n tecnol&oacute;gica integral y unificada que abarca desde el hardware f&iacute;sico en planta hasta las capas m&aacute;s avanzadas de Inteligencia Artificial. Alineamos las especialidades en tecnolog&iacute;as IA, TIC y Edge Computing con una rigurosa arquitectura de Seguridad Estructurada de la Informaci&oacute;n. A trav&eacute;s de nuestras 5 divisiones subsidiarias, garantizamos que las organizaciones mantengan la propiedad absoluta, privacidad y cumplimiento normativo de sus datos, operando con total autonom&iacute;a frente a terceros.",
+                    items: []
                 },
-                content: {
-                    es: "En un entorno global donde el control del dato es el activo más crítico, COMSERCOM ofrece una solución tecnológica integral y unificada que abarca desde el hardware físico en planta hasta las capas más avanzadas de Inteligencia Artificial. Alineamos las especialidades en tecnologías IA, TIC y Edge Computing con una rigurosa arquitectura de Seguridad Estructurada de la Información. A través de nuestras 5 divisiones subsidiarias, garantizamos que las organizaciones mantengan la propiedad absoluta, privacidad y cumplimiento normativo de sus datos, operando con total autonomía frente a terceros.",
-                    en: "In a global environment where data control is the most critical asset, COMSERCOM offers a comprehensive and unified technological solution spanning from physical hardware on the factory floor to the most advanced Artificial Intelligence layers. We align specialties in AI, ICT, and Edge Computing technologies with a rigorous Structured Information Security architecture. Through our 5 subsidiary divisions, we ensure organizations maintain absolute ownership, privacy, and regulatory compliance of their data, operating with complete autonomy from third parties."
+                edgecom: {
+                    title: "HardW Productos",
+                    summary: "Provisi&oacute;n de la capa f&iacute;sica cr&iacute;tica, asegurando que el hardware y el almacenamiento local impidan la fuga de datos y garanticen el control absoluto del cliente sobre sus activos tangibles.",
+                    icon: "fa-server",
+                    items: [
+                        { title: "Infraestructura F&iacute;sica End-to-End", desc: "Suministro e implementaci&oacute;n integral de infraestructura f&iacute;sica para organizaciones financieras, log&iacute;sticas e industriales. Proveemos las bases tangibles para arquitecturas Edge Computing de alta resistencia, asegurando el aislamiento f&iacute;sico y la protecci&oacute;n de los entornos tecnol&oacute;gicos corporativos.", icon: "fa-network-wired" },
+                        { title: "Soluciones para Datacenters", desc: "Equipamiento especializado para centros de datos locales. Incluye despliegue de racks de alta densidad, cableado estructurado, sistemas de climatizaci&oacute;n de precisi&oacute;n y servidores dedicados, optimizando costes operativos mediante opciones de hardware nuevo y reacondicionado certificado.", icon: "fa-database" },
+                        { title: "Componentes Cr&iacute;ticos y Memorias", desc: "Provisi&oacute;n a gran escala de componentes de alto rendimiento para servidores corporativos. Suministramos memorias RAM avanzadas, unidades de estado s&oacute;lido (SSD) de clase empresarial y sistemas &oacute;pticos dise&ntilde;ados para maximizar la velocidad y seguridad en la transferencia de datos internos.", icon: "fa-microchip" },
+                        { title: "Arquitecturas de Red", desc: "Despliegue de redes cr&iacute;ticas para aislar y asegurar la informaci&oacute;n. Suministro de switches gestionables, routers de alta capacidad operativa, firewalls perimetrales por hardware y cableado estructurado CAT6/CAT7 para redes corporativas de latencia ultra baja.", icon: "fa-sitemap" },
+                        { title: "Device-as-a-Service (Workplace)", desc: "Modelo flexible de provisi&oacute;n de equipamiento para puestos de trabajo. Suministro de pantallas, monitores, puestos financieros avanzados y terminales de punto de venta (TPVs) bajo un esquema de cuota mensual por uso, con mantenimiento integral de hardware incluido.", icon: "fa-desktop" },
+                        { title: "Hardware para IoT Industrial", desc: "Capa f&iacute;sica base para ecosistemas conectados. Provisi&oacute;n masiva de sensores industriales (temperatura, presi&oacute;n, vibraci&oacute;n, caudal), c&aacute;maras IP de vigilancia de alta definici&oacute;n y m&oacute;dulos de conectividad inteligente adaptados a entornos extremos.", icon: "fa-industry" },
+                        { title: "Almacenamiento Masivo Empresarial", desc: "Cabinas de discos, arreglos de almacenamiento masivo y arquitecturas SAN/NAS f&iacute;sicas para redes corporativas cerradas. Garantizamos el resguardo local de terabytes de datos cr&iacute;ticos sin depender de servicios de almacenamiento en nubes p&uacute;blicas.", icon: "fa-hdd" },
+                        { title: "Energ&iacute;a Cr&iacute;tica y Continuidad", desc: "Protecci&oacute;n el&eacute;ctrica ininterrumpida para infraestructuras tecnol&oacute;gicas. Suministro de sistemas de alimentaci&oacute;n ininterrumpida (SAI/UPS), distribuci&oacute;n de energ&iacute;a inteligente (PDU) y generadores para garantizar el 100% de uptime (tiempo de actividad) en operaciones financieras e industriales.", icon: "fa-bolt" }
+                    ]
                 },
-                banners: [
-                    {
-                        img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Soberanía Física", en: "Physical Control" },
-                        title: { es: "Aislamiento de Nivel Financiero", en: "Financial-Grade Isolation" },
-                        desc: { es: "Evite la fuga oculta de datos operativos controlando el 100% de sus entornos físicos locales.", en: "Prevent hidden operational data leaks by controlling 100% of your physical environments." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "IA Local", en: "On-Premises AI" },
-                        title: { es: "Modelos Inteligentes Propios", en: "Proprietary Smart Models" },
-                        desc: { es: "Inyección de analítica avanzada perimetral sin compartir datos críticos con nubes de terceros.", en: "Injection of advanced edge analytics without sharing critical data with third-party clouds." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Gobernanza", en: "Governance" },
-                        title: { es: "Cumplimiento ISO Garantizado", en: "Guaranteed ISO Compliance" },
-                        desc: { es: "Modelado estructural estratégico alineado a normativas internacionales de máxima protección.", en: "Strategic structural modeling aligned with international regulations for maximum protection." }
-                    }
-                ]
+                aidomot: {
+                    title: "IAimplementations Servicios",
+                    summary: "Despliegue l&oacute;gico que procesa algoritmos de Inteligencia Artificial en servidores locales (Edge Analytics) o nubes privadas, garantizando que los datos operativos jam&aacute;s queden expuestos sin cifrado.",
+                    icon: "fa-brain",
+                    items: [
+                        { title: "AI Factory & Gemelos Digitales", desc: "Capas avanzadas de Inteligencia Artificial integradas a redes corporativas. Desarrollamos gemelos digitales en servidores centrales y conectamos miles de sensores de forma segura para crear f&aacute;bricas inteligentes y modelos predictivos aut&oacute;nomos.", icon: "fa-robot" },
+                        { title: "Integraciones Cloud Seguras", desc: "Enrutamiento seguro mediante VPN y protocolos MQTT hacia plataformas de nube co-administradas (AWS IoT Core, Azure, Google Cloud). Habilitamos cuadros de mando remotos procesando algoritmos complejos bajo una arquitectura h&iacute;brida de alta seguridad.", icon: "fa-cloud" },
+                        { title: "Procesamiento y Redes Locales", desc: "Soluciones de procesamiento in-situ para m&aacute;xima privacidad. Operamos modelos de IA y captura de datos en tiempo real exclusivamente en infraestructuras locales, aislando los dispositivos cr&iacute;ticos de cualquier red p&uacute;blica.", icon: "fa-network-wired" },
+                        { title: "Estaciones de Trabajo Automatizadas", desc: "Automatizaci&oacute;n de estaciones operativas en entornos industriales y comerciales. Implementamos plataformas locales que recolectan datos de la planta f&iacute;sica y asisten al operador humano o rob&oacute;tico en la toma de decisiones inmediatas.", icon: "fa-laptop-code" },
+                        { title: "Automatizaci&oacute;n Industrial", desc: "Integraci&oacute;n directa de sistemas IoT con la infraestructura l&oacute;gica existente (PLCs, SCADA). Desplegamos ingenier&iacute;a especializada en optimizaci&oacute;n de procesos, rob&oacute;tica y manipulaci&oacute;n remota de l&iacute;neas de producci&oacute;n.", icon: "fa-cogs" },
+                        { title: "IoT as a Service (Despliegue)", desc: "Servicios gestionados integrales de Internet de las Cosas. Ejecutamos el despliegue en campo (tendido de cableado, sensores y antenas en agricultura o industria) y programamos la arquitectura l&oacute;gica para el control a distancia.", icon: "fa-wifi" },
+                        { title: "Anal&iacute;tica Perimetral", desc: "An&aacute;lisis avanzado de datos en el borde de la red. Ejecutamos algoritmos predictivos y de Inteligencia Artificial directamente en el equipamiento local, garantizando respuestas ultrarr&aacute;pidas de las maquinarias sin latencia de conexi&oacute;n.", icon: "fa-chart-line" },
+                        { title: "Pasarelas y Cobertura Perimetral", desc: "Tecnolog&iacute;as de conectividad industrial de largo alcance (NB-IoT, LoRaWAN, 5G Industrial). Instalamos y configuramos pasarelas de control (Gateways) que canalizan y cifran la informaci&oacute;n desde el campo hasta la red privada central.", icon: "fa-broadcast-tower" }
+                    ]
+                },
+                forensic: {
+                    title: "Auditory RSGI ISO SecurityServicios",
+                    summary: "Blindaje legal e institucional de la informaci&oacute;n corporativa, asegurando que todos los procesos, manuales y estructuras organizacionales sigan las normativas estrictas de control y privacidad de datos frente a cualquier auditor&iacute;a externa.",
+                    icon: "fa-shield-halved",
+                    items: [
+                        { title: "Seguridad de la Informaci&oacute;n", desc: "Evaluaci&oacute;n integral y consultor&iacute;a estrat&eacute;gica para blindar los sistemas corporativos. Alineamos la arquitectura tecnol&oacute;gica de su empresa con los est&aacute;ndares internacionales m&aacute;s rigurosos de protecci&oacute;n de datos (SGSI y RGSI).", icon: "fa-lock" },
+                        { title: "Auditor&iacute;a Forense Tecnol&oacute;gica", desc: "An&aacute;lisis forense profundo de documentaci&oacute;n, flujos de informaci&oacute;n, contratos y procedimientos en la infraestructura de TI para asegurar el control institucional, detectando vulnerabilidades ocultas o fugas de datos.", icon: "fa-magnifying-glass" },
+                        { title: "Reingenier&iacute;a de Procesos", desc: "Dise&ntilde;o, optimizaci&oacute;n y redise&ntilde;o del organigrama y los flujos de trabajo internos de forma pragm&aacute;tica. Mejoramos la eficiencia operativa garantizando la transparencia y el control absoluto sobre los recursos de la empresa.", icon: "fa-code-branch" },
+                        { title: "Prevenci&oacute;n y Control de Riesgos", desc: "Identificaci&oacute;n proactiva de amenazas corporativas y estructuraci&oacute;n a largo plazo de planes de contingencia. Implementamos medidas anal&iacute;ticas para mitigar riesgos operativos, financieros y tecnol&oacute;gicos de forma efectiva.", icon: "fa-triangle-exclamation" },
+                        { title: "Control de Resultados y Viabilidad", desc: "Auditor&iacute;a de rendimiento y m&eacute;tricas de cumplimiento de objetivos empresariales. Analizamos la viabilidad t&eacute;cnica y la estrategia de negocio para asegurar que la ejecuci&oacute;n de proyectos coincida con las metas corporativas.", icon: "fa-chart-pie" },
+                        { title: "Cumplimiento Normativo ISO", desc: "Adecuaci&oacute;n de la infraestructura corporativa a normativas legales y de seguridad de la industria. Guiamos a la organizaci&oacute;n a trav&eacute;s del laberinto normativo para certificar el cumplimiento de est&aacute;ndares como ISO 27001 y afines.", icon: "fa-certificate" },
+                        { title: "Fase Documental y Matrices", desc: "Ejecuci&oacute;n exhaustiva de la fase documental. Redacci&oacute;n t&eacute;cnica especializada de Manuales de Organizaci&oacute;n y Funciones (MOF), Procedimientos Operativos (MAPRO), matrices de riesgo institucionales y formularios de control interno.", icon: "fa-file-signature" }
+                    ]
+                },
+                owncode: {
+                    title: "SoftW builder Servicios",
+                    summary: "Propiedad intelectual protegida. Construcci&oacute;n de c&oacute;digo limpio y parametrizado para correr en servidores propios, previniendo el espionaje corporativo o la dependencia de nubes de terceros sin control.",
+                    icon: "fa-code",
+                    items: [
+                        { title: "Sistemas ERP Core", desc: "Desarrollo e implementaci&oacute;n de sistemas de Planificaci&oacute;n de Recursos Empresariales (ERP). Unificamos sus operaciones financieras, log&iacute;sticas y de recursos humanos bajo una &uacute;nica plataforma de alta seguridad alojada en sus servidores.", icon: "fa-cubes" },
+                        { title: "Gesti&oacute;n de Clientes (CRM)", desc: "Plataformas corporativas centralizadas para la gesti&oacute;n de relaciones con clientes. Dise&ntilde;adas para operar on-premise, protegiendo la base de datos comercial m&aacute;s sensible y confidencial de su empresa.", icon: "fa-users" },
+                        { title: "Planificaci&oacute;n de Producci&oacute;n (MRP)", desc: "Software industrial nativo para el control de inventarios, trazabilidad y planificaci&oacute;n de la manufactura. Logramos una sincronizaci&oacute;n perfecta entre la planta de producci&oacute;n f&iacute;sica y la capa de control gerencial.", icon: "fa-industry" },
+                        { title: "Business Intelligence (BI)", desc: "Inyecci&oacute;n de motores anal&iacute;ticos avanzados en el n&uacute;cleo de su negocio. Transformamos datos crudos transaccionales en cuadros de mando interactivos para la toma de decisiones ejecutivas en tiempo real.", icon: "fa-chart-bar" },
+                        { title: "Apps M&oacute;viles Corporativas", desc: "Desarrollo a medida de aplicaciones m&oacute;viles empresariales (iOS/Android). Creamos interfaces seguras y cifradas para el acceso remoto controlado a los sistemas centrales de la compa&ntilde;&iacute;a por parte de su personal.", icon: "fa-mobile-screen" },
+                        { title: "Arquitecturas FinTech", desc: "Construcci&oacute;n de ecosistemas de software financiero y pasarelas de pago transaccionales. C&oacute;digo robusto y auditable que cumple estrictamente con los est&aacute;ndares bancarios de seguridad y anti-fraude.", icon: "fa-wallet" },
+                        { title: "Agentes Inteligentes Aut&oacute;nomos", desc: "Integraci&oacute;n de m&oacute;dulos de Inteligencia Artificial (Agentes) capaces de ejecutar tareas administrativas, comerciales y de soporte operativo continuo sin necesidad de intervenci&oacute;n humana constante.", icon: "fa-user-astronaut" },
+                        { title: "Sistemas de Scoring de Riesgo", desc: "Algoritmos personalizados para el an&aacute;lisis de riesgo crediticio y comportamiento financiero. Motores de c&aacute;lculo algor&iacute;tmico de alta precisi&oacute;n alojados directamente en su infraestructura privada.", icon: "fa-scale-balanced" },
+                        { title: "Modelo SaaS Seguro", desc: "Alquiler de software corporativo operando en nodos de alta seguridad. Este modelo incluye el mantenimiento continuo, la correcci&oacute;n de errores (bugs) y actualizaciones de infraestructura bajo una cuota predecible.", icon: "fa-cloud-arrow-up" },
+                        { title: "Factor&iacute;a a Medida (Venta de C&oacute;digo)", desc: "Desarrollo tecnol&oacute;gico llave en mano. Tras la construcci&oacute;n, le entregamos el 100% del c&oacute;digo fuente y la propiedad intelectual, garantizando que usted sea el due&ntilde;o absoluto de la tecnolog&iacute;a que impulsa su negocio.", icon: "fa-file-code" }
+                    ]
+                },
+                support: {
+                    title: "Servs Servicios",
+                    summary: "Supervisi&oacute;n y gobernanza externa de la infraestructura de TI y seguridad de la informaci&oacute;n (SGSI), garantizando la continuidad del negocio bajo un control soberano permanente mediante servicios gestionados y centros remotos.",
+                    icon: "fa-headset",
+                    items: [
+                        { title: "Consultor&iacute;a IT Estrat&eacute;gica", desc: "Trazamos la estrategia tecnol&oacute;gica a nivel de direcci&oacute;n. Analizamos la l&oacute;gica de negocio y definimos el plan maestro de sistemas asegurando el alineamiento absoluto con los objetivos corporativos.", icon: "fa-lightbulb" },
+                        { title: "Oficina de Proyectos (PMO)", desc: "Supervisi&oacute;n de desarrollos de software y despliegues complejos en la nube o IoT. Gestionamos los riesgos y controlamos los hitos de entrega bajo estrictos Acuerdos de Nivel de Servicio (SLA).", icon: "fa-tasks" },
+                        { title: "Despliegue e Implementaci&oacute;n", desc: "Direcci&oacute;n t&eacute;cnica experta del despliegue en campo. Aseguramos que la transici&oacute;n de la estrategia te&oacute;rica a la infraestructura f&iacute;sica y l&oacute;gica se ejecute sin interrupciones operativas.", icon: "fa-tools" },
+                        { title: "Servicios Gestionados (Soporte)", desc: "Operaci&oacute;n y soporte t&eacute;cnico continuo. Asumimos la vigilancia y el mantenimiento perpetuo de su infraestructura bajo rigurosas certificaciones de continuidad, evitando los altos costes de contrataci&oacute;n de personal interno.", icon: "fa-life-ring" },
+                        { title: "Enlace Corporativo", desc: "Canal directo y confidencial con nuestros consultores expertos para la coordinaci&oacute;n de auditor&iacute;as iniciales, evaluaci&oacute;n de vulnerabilidades de red y cotizaci&oacute;n de marcos de trabajo estrat&eacute;gicos.", icon: "fa-handshake" },
+                        { title: "Ecosistema de Alianzas", desc: "Gesti&oacute;n de alianzas certificadas. Integramos soluciones conjuntas con los principales fabricantes globales de hardware y servicios cloud para asegurar un ecosistema tecnol&oacute;gico de clase mundial.", icon: "fa-globe" },
+                        { title: "Distribuci&oacute;n y Log&iacute;stica TI", desc: "Orquestaci&oacute;n log&iacute;stica para la provisi&oacute;n de activos tecnol&oacute;gicos. Garantizamos la llegada oportuna y segura de los componentes cr&iacute;ticos y el equipamiento especializado hasta sus instalaciones operativas.", icon: "fa-truck" },
+                        { title: "Transferencia de Conocimiento", desc: "Programas de formaci&oacute;n y cultura de TI. Capacitamos al personal operativo y directivo de su empresa en el uso seguro de las infraestructuras implementadas y en la concienciaci&oacute;n sobre ciberseguridad.", icon: "fa-chalkboard-user" },
+                        { title: "Gobernanza de C&oacute;digo Soberano", desc: "Auditor&iacute;a especializada que certifica la propiedad intelectual. Garantizamos que el c&oacute;digo fuente de los desarrollos a medida se mantenga inalterado, totalmente privado y bajo el control soberano de la empresa.", icon: "fa-scroll" },
+                        { title: "Implementaci&oacute;n Normativa ISO", desc: "Cat&aacute;logo de consultor&iacute;a para certificaci&oacute;n legal. Contamos con metodolog&iacute;as &aacute;giles para llevar sus infraestructuras hacia la certificaci&oacute;n ISO 27001 (Seguridad), ISO 27018 (Privacidad), ISO 9001 e ISO 20000.", icon: "fa-stamp" },
+                        { title: "Operaciones SOC / NOC Remotas", desc: "Centros avanzados de operaciones. Supervisamos proactivamente sus redes (NOC) y la seguridad de la informaci&oacute;n (SOC) mediante telemetr&iacute;a remota, bloqueando amenazas y conexiones no autorizadas 24/7.", icon: "fa-satellite-dish" }
+                    ]
+                }
             },
-
-            edgecom: {
-                id: 'edgecom',
-                cleanName: 'edgecom',
-                icon: 'fa-server',
-                summary: {
-                    es: "Provisión de la capa física crítica, asegurando que el hardware y el almacenamiento local impidan la fuga de datos y garanticen el control absoluto del cliente sobre sus activos tangibles.",
-                    en: "Provision of the critical physical layer, ensuring hardware and local storage prevent data leaks and guarantee absolute client control over their tangible assets."
+            en: {
+                home: {
+                    title: "Edge-to-Edge Private and Secure Information Sovereignty",
+                    summary: "In a global environment where data control is the most critical asset, COMSERCOM offers a comprehensive and unified technological solution spanning from physical hardware on the factory floor to the most advanced Artificial Intelligence layers. We align specialties in AI, ICT, and Edge Computing technologies with a rigorous Structured Information Security architecture. Through our 5 subsidiary divisions, we ensure organizations maintain absolute ownership, privacy, and regulatory compliance of their data, operating with complete autonomy from third parties.",
+                    items: []
                 },
-                links: [
-                    { id: 'infra', icon: 'fa-network-wired', title: {es: "Infrastructure", en: "Infrastructure"}, content: {
-                        es: "Suministro e implementación integral de infraestructura física para organizaciones financieras, logísticas e industriales. Proveemos las bases tangibles para arquitecturas Edge Computing de alta resistencia.",
-                        en: "Comprehensive supply and implementation of physical infrastructure for financial, logistics, and industrial organizations. We provide the tangible foundations for high-resilience Edge Computing architectures."
-                    }},
-                    { id: 'datacenter', icon: 'fa-database', title: {es: "Datacenter", en: "Datacenter"}, content: {
-                        es: "Equipamiento especializado para centros de datos locales. Incluye despliegue de racks de alta densidad, cableado estructurado, sistemas de climatización de precisión y servidores dedicados.",
-                        en: "Specialized equipment for local data centers. Includes deployment of high-density racks, structured cabling, precision cooling systems, and dedicated servers."
-                    }},
-                    { id: 'components', icon: 'fa-microchip', title: {es: "Components", en: "Components"}, content: {
-                        es: "Provisión a gran escala de componentes de alto rendimiento. Suministramos memorias RAM avanzadas, SSD empresariales y sistemas ópticos para maximizar la velocidad interna.",
-                        en: "Large-scale provision of high-performance components. We supply advanced RAM memory, enterprise SSDs, and optical systems to maximize internal speed."
-                    }},
-                    { id: 'networking', icon: 'fa-project-diagram', title: {es: "Networking", en: "Networking"}, content: {
-                        es: "Despliegue de redes críticas para aislar información. Suministro de switches, routers de alta capacidad, firewalls perimetrales y cableado corporativo de ultra baja latencia.",
-                        en: "Deployment of critical networks to isolate information. Supply of switches, high-capacity routers, perimeter firewalls, and ultra-low latency corporate cabling."
-                    }},
-                    { id: 'daas', icon: 'fa-desktop', title: {es: "DaaS", en: "DaaS"}, content: {
-                        es: "Modelo flexible de provisión de equipamiento. Suministro de pantallas, puestos financieros y TPVs bajo un esquema de cuota mensual con mantenimiento integral incluido.",
-                        en: "Flexible equipment provision model. Supply of screens, financial workstations, and POS terminals under a monthly fee scheme with comprehensive maintenance included."
-                    }}
-                ],
-                banners: [
-                    {
-                        img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Oferta Suministro", en: "Supply Offer" },
-                        title: { es: "Nodos Edge Integrados", en: "Integrated Edge Nodes" },
-                        desc: { es: "Implementación física end-to-end con 15% de descuento en cableado estructurado CAT7.", en: "End-to-end physical implementation with 15% off on structured CAT7 cabling." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Optimización", en: "Optimization" },
-                        title: { es: "Datacenters Reacondicionados", en: "Refurbished Datacenters" },
-                        desc: { es: "Reducción drástica de costes con equipamiento de almacenamiento masivo certificado.", en: "Drastic cost reduction with certified massive storage enterprise hardware." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Plan DaaS", en: "DaaS Plan" },
-                        title: { es: "Terminales Financieros", en: "Financial Terminals" },
-                        desc: { es: "Suscripción mensual fija con soporte de hardware físico y sustitución inmediata.", en: "Fixed monthly subscription with physical hardware support and immediate replacement." }
-                    }
-                ]
-            },
-
-            aidomot: {
-                id: 'aidomot',
-                cleanName: 'aidomot',
-                icon: 'fa-robot',
-                summary: {
-                    es: "Despliegue lógico que procesa algoritmos de Inteligencia Artificial en servidores locales (Edge Analytics) o nubes privadas, garantizando que los datos operativos jamás queden expuestos sin cifrado.",
-                    en: "Logical deployment that processes Artificial Intelligence algorithms on local servers (Edge Analytics) or private clouds, ensuring operational data is never exposed without encryption."
+                edgecom: {
+                    title: "HardW Products",
+                    summary: "Provision of the critical physical layer, ensuring hardware and local storage prevent data leaks and guarantee absolute client control over their tangible assets.",
+                    icon: "fa-server",
+                    items: [
+                        { title: "End-to-End Physical Infrastructure", desc: "Comprehensive supply and implementation of physical infrastructure for financial, logistics, and industrial organizations. We provide the tangible foundations for high-resilience Edge Computing architectures, ensuring physical isolation and protection of corporate technological environments.", icon: "fa-network-wired" },
+                        { title: "Datacenter Solutions", desc: "Specialized equipment for local data centers. Includes deployment of high-density racks, structured cabling, precision cooling systems, and dedicated servers, optimizing operational costs through certified new and refurbished hardware options.", icon: "fa-database" },
+                        { title: "Critical Components & Memory", desc: "Large-scale provision of high-performance components for corporate servers. We supply advanced RAM memory, enterprise-class solid-state drives (SSDs), and optical systems designed to maximize speed and security in internal data transfers.", icon: "fa-microchip" },
+                        { title: "Networking Architectures", desc: "Deployment of critical networks to isolate and secure information. Supply of manageable switches, high-operational-capacity routers, hardware perimeter firewalls, and structured CAT6/CAT7 cabling for ultra-low latency corporate networks.", icon: "fa-sitemap" },
+                        { title: "Device-as-a-Service (Workplace)", desc: "Flexible equipment provision model for workplaces. Supply of screens, monitors, advanced financial workstations, and point-of-sale (POS) terminals under a monthly pay-per-use scheme, including comprehensive hardware maintenance.", icon: "fa-desktop" },
+                        { title: "Industrial IoT Hardware", desc: "Base physical layer for connected ecosystems. Massive provision of industrial sensors (temperature, pressure, vibration, flow), high-definition IP surveillance cameras, and smart connectivity modules adapted for extreme environments.", icon: "fa-industry" },
+                        { title: "Enterprise Mass Storage", desc: "Disk arrays, mass storage arrays, and physical SAN/NAS architectures for closed corporate networks. We guarantee local safeguarding of terabytes of critical data without relying on public cloud storage services.", icon: "fa-hdd" },
+                        { title: "Critical Power & Continuity", desc: "Uninterruptible electrical protection for technological infrastructures. Supply of uninterruptible power supply (UPS) systems, intelligent power distribution (PDU), and generators to ensure 100% uptime in financial and industrial operations.", icon: "fa-bolt" }
+                    ]
                 },
-                links: [
-                    { id: 'aifactory', icon: 'fa-industry', title: {es: "aiFactory", en: "aiFactory"}, content: {
-                        es: "Capas avanzadas de IA integradas a redes corporativas. Desarrollamos gemelos digitales y conectamos miles de sensores de forma segura para crear fábricas inteligentes predictivas.",
-                        en: "Advanced AI layers integrated into corporate networks. We develop digital twins and securely connect thousands of sensors to create predictive smart factories."
-                    }},
-                    { id: 'cloud', icon: 'fa-cloud-shield-alt', title: {es: "CloudSolutions", en: "CloudSolutions"}, content: {
-                        es: "Enrutamiento seguro mediante VPN y MQTT hacia plataformas de nube co-administradas. Habilitamos cuadros de mando remotos procesando algoritmos complejos bajo alta seguridad.",
-                        en: "Secure routing via VPN and MQTT to co-managed cloud platforms. We enable remote dashboards by processing complex algorithms under high security."
-                    }},
-                    { id: 'local', icon: 'fa-hdd', title: {es: "LocalSolutions", en: "LocalSolutions"}, content: {
-                        es: "Soluciones de procesamiento in-situ para máxima privacidad. Operamos modelos de IA y captura de datos exclusivamente en infraestructuras locales.",
-                        en: "On-premises processing solutions for maximum privacy. We operate AI models and data capture exclusively on local infrastructures."
-                    }},
-                    { id: 'automation', icon: 'fa-cogs', title: {es: "Automation", en: "Automation"}, content: {
-                        es: "Integración directa de sistemas IoT con infraestructura existente (PLCs, SCADA). Desplegamos ingeniería en optimización de procesos y robótica de producción.",
-                        en: "Direct integration of IoT systems with existing infrastructure (PLCs, SCADA). We deploy engineering in process optimization and production robotics."
-                    }}
-                ],
-                banners: [
-                    {
-                        img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Conectividad", en: "Connectivity" },
-                        title: { es: "Redes Perimetrales LoRaWAN", en: "LoRaWAN Perimeter Networks" },
-                        desc: { es: "Despliegue masivo en plantas y agricultura de precisión con pasarelas ultra-seguras.", en: "Massive deployment in manufacturing plants and precision farming with ultra-secure gateways." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Demo IA", en: "AI Demo" },
-                        title: { es: "Mantenimiento Predictivo", en: "Predictive Maintenance" },
-                        desc: { es: "Inyección de algoritmos avanzados en PLCs existentes para mitigar paros no programados.", en: "Injection of advanced algorithms into existing PLCs to mitigate unscheduled shutdowns." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Gemelo Digital", en: "Digital Twin" },
-                        title: { es: "Modelado Inmersivo Central", en: "Central Immersive Modeling" },
-                        desc: { es: "Visualización operativa en tiempo real bajo esquemas lógicos altamente protegidos.", en: "Real-time operational visualization under highly protected logic frameworks." }
-                    }
-                ]
-            },
-
-            forensic: {
-                id: 'forensic',
-                cleanName: 'forensic',
-                icon: 'fa-balance-scale',
-                summary: {
-                    es: "Blindaje legal e institucional de la información corporativa, asegurando que todos los procesos sigan las normativas estrictas de control y privacidad de datos frente a auditorías externas.",
-                    en: "Legal and institutional shielding of corporate information, ensuring all processes follow strict data privacy and control regulations against external audits."
+                aidomot: {
+                    title: "AI Implementations Services",
+                    summary: "Logical deployment that processes Artificial Intelligence algorithms on local servers (Edge Analytics) or private clouds, ensuring operational data is never exposed without encryption.",
+                    icon: "fa-brain",
+                    items: [
+                        { title: "AI Factory & Digital Twins", desc: "Advanced Artificial Intelligence layers integrated into corporate networks. We develop digital twins on central servers and securely connect thousands of sensors to create smart factories and autonomous predictive models.", icon: "fa-robot" },
+                        { title: "Secure Cloud Integrations", desc: "Secure routing via VPN and MQTT protocols to co-managed cloud platforms (AWS IoT Core, Azure, Google Cloud). We enable remote dashboards by processing complex algorithms under a high-security hybrid architecture.", icon: "fa-cloud" },
+                        { title: "Local Processing & Networks", desc: "On-premises processing solutions for maximum privacy. We operate AI models and real-time data capture exclusively on local infrastructures, isolating critical devices from any public network.", icon: "fa-network-wired" },
+                        { title: "Automated Workstations", desc: "Automation of operational stations in industrial and commercial environments. We implement local platforms that collect data from the physical plant and assist human or robotic operators in immediate decision-making.", icon: "fa-laptop-code" },
+                        { title: "Industrial Automation", desc: "Direct integration of IoT systems with existing logical infrastructure (PLCs, SCADA). We deploy specialized engineering in process optimization, robotics, and remote manipulation of production lines.", icon: "fa-cogs" },
+                        { title: "IoT as a Service", desc: "Comprehensive managed Internet of Things services. We execute field deployment (cable routing, sensors, and antennas in agriculture or industry) and program the logical architecture for remote control.", icon: "fa-wifi" },
+                        { title: "Edge Analytics", desc: "Advanced data analysis at the network edge. We execute predictive and Artificial Intelligence algorithms directly on local equipment, guaranteeing ultra-fast machinery responses without connection latency.", icon: "fa-chart-line" },
+                        { title: "Gateways & Perimeter Coverage", desc: "Long-range industrial connectivity technologies (NB-IoT, LoRaWAN, Industrial 5G). We install and configure control gateways that channel and encrypt information from the field to the central private network.", icon: "fa-broadcast-tower" }
+                    ]
                 },
-                links: [
-                    { id: 'infosec', icon: 'fa-user-shield', title: {es: "InfoSecurity", en: "InfoSecurity"}, content: {
-                        es: "Evaluación integral y consultoría para blindar sistemas corporativos. Alineamos la arquitectura con estándares internacionales de protección de datos (SGSI y RGSI).",
-                        en: "Comprehensive evaluation and consulting to shield corporate systems. We align architecture with international data protection standards (ISMS and GDPR)."
-                    }},
-                    { id: 'audit', icon: 'fa-search', title: {es: "ForensAudit", en: "ForensAudit"}, content: {
-                        es: "Análisis forense profundo de documentación, flujos de información y procedimientos TI para asegurar control institucional y detectar vulnerabilidades ocultas.",
-                        en: "Deep forensic analysis of documentation, information flows, and IT procedures to ensure institutional control and detect hidden vulnerabilities."
-                    }},
-                    { id: 'process', icon: 'fa-project-diagram', title: {es: "ProcessMaker", en: "ProcessMaker"}, content: {
-                        es: "Diseño, optimización y rediseño del organigrama y flujos de trabajo internos pragmáticamente para mejorar eficiencia operativa y garantizar control absoluto.",
-                        en: "Pragmatic design, optimization, and redesign of the organizational chart and internal workflows to improve operational efficiency and guarantee absolute control."
-                    }}
-                ],
-                banners: [
-                    {
-                        img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Auditoría Gratis", en: "Free Audit" },
-                        title: { es: "Diagnóstico de Estructura", en: "Structure Diagnosis" },
-                        desc: { es: "Evaluación inicial de vulnerabilidades procedimentales y reingeniería organizacional.", en: "Initial assessment of procedural vulnerabilities and organizational reengineering." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Fase Documental", en: "Documentary Phase" },
-                        title: { es: "Manuales Técnicos MOF/MAPRO", en: "Technical MOF/MAPRO Manuals" },
-                        desc: { es: "Redacción técnica experta de matrices de riesgo institucionales y formularios de control.", en: "Expert technical writing of institutional risk matrices and control forms." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Mitigación", en: "Mitigation" },
-                        title: { es: "Previsión Preventiva de Riesgos", en: "Preventive Risk Forecasting" },
-                        desc: { es: "Controles institucionales robustos para asegurar el fiel cumplimiento de objetivos organizacionales.", en: "Robust institutional controls to ensure faithful compliance with organizational goals." }
-                    }
-                ]
-            },
-
-            owncode: {
-                id: 'owncode',
-                cleanName: 'owncode',
-                icon: 'fa-code',
-                summary: {
-                    es: "Propiedad intelectual protegida. Construcción de código limpio y parametrizado para correr en servidores propios, previniendo el espionaje corporativo o dependencia de terceros.",
-                    en: "Protected intellectual property. Construction of clean and parameterized code to run on proprietary servers, preventing corporate espionage or third-party dependence."
+                forensic: {
+                    title: "Auditory RSGI ISO Security Services",
+                    summary: "Legal and institutional shielding of corporate information, ensuring that all processes, manuals, and organizational structures follow strict data privacy and control regulations against any external audit.",
+                    icon: "fa-shield-halved",
+                    items: [
+                        { title: "Information Security", desc: "Comprehensive evaluation and strategic consulting to shield corporate systems. We align your company's technological architecture with the most rigorous international data protection standards (ISMS and GDPR equivalents).", icon: "fa-lock" },
+                        { title: "Technological Forensic Audit", desc: "Deep forensic analysis of documentation, information flows, contracts, and procedures within the IT infrastructure to ensure institutional control, detecting hidden vulnerabilities or data leaks.", icon: "fa-magnifying-glass" },
+                        { title: "Process Reengineering", desc: "Pragmatic design, optimization, and redesign of the organizational chart and internal workflows. We improve operational efficiency, guaranteeing transparency and absolute control over company resources.", icon: "fa-code-branch" },
+                        { title: "Risk Prevention & Control", desc: "Proactive identification of corporate threats and long-term structuring of contingency plans. We implement analytical measures to effectively mitigate operational, financial, and technological risks.", icon: "fa-triangle-exclamation" },
+                        { title: "Results Control & Feasibility", desc: "Performance audit and business objective compliance metrics. We analyze technical feasibility and business strategy to ensure project execution aligns with corporate goals.", icon: "fa-chart-pie" },
+                        { title: "ISO Regulatory Compliance", desc: "Adaptation of corporate infrastructure to legal and industry security regulations. We guide the organization through the regulatory maze to certify compliance with standards such as ISO 27001 and related.", icon: "fa-certificate" },
+                        { title: "Documentary Phase & Matrices", desc: "Exhaustive execution of the documentary phase. Specialized technical drafting of Organization and Functions Manuals (MOF), Standard Operating Procedures (SOP), institutional risk matrices, and internal control forms.", icon: "fa-file-signature" }
+                    ]
                 },
-                links: [
-                    { id: 'erp', icon: 'fa-sitemap', title: {es: "ERP Core", en: "ERP Core"}, content: {
-                        es: "Desarrollo e implementación de sistemas ERP. Unificamos operaciones financieras y logísticas bajo una única plataforma de alta seguridad alojada en sus servidores.",
-                        en: "Development and implementation of ERP systems. We unify financial and logistics operations under a single high-security platform hosted on your servers."
-                    }},
-                    { id: 'crm', icon: 'fa-users', title: {es: "CRM", en: "CRM"}, content: {
-                        es: "Plataformas centralizadas on-premise para gestión de relaciones con clientes, protegiendo la base de datos comercial más sensible de su empresa.",
-                        en: "Centralized on-premise platforms for customer relationship management, protecting your company's most sensitive commercial database."
-                    }},
-                    { id: 'fintech', icon: 'fa-wallet', title: {es: "FinTech & Scores", en: "FinTech & Scores"}, content: {
-                        es: "Arquitecturas FinTech, pasarelas de pago y motores de cálculo algorítmico para análisis de riesgo crediticio alojados en su infraestructura privada.",
-                        en: "FinTech architectures, payment gateways, and algorithmic calculation engines for credit risk analysis hosted on your private infrastructure."
-                    }},
-                    { id: 'agents', icon: 'fa-brain', title: {es: "IA Agents", en: "AI Agents"}, content: {
-                        es: "Integración de módulos de Inteligencia Artificial (Agentes) capaces de ejecutar tareas administrativas y soporte continuo sin intervención humana constante.",
-                        en: "Integration of Artificial Intelligence modules (Agents) capable of executing administrative tasks and continuous support without constant human intervention."
-                    }}
-                ],
-                banners: [
-                    {
-                        img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Código Llave en Mano", en: "Turnkey Code" },
-                        title: { es: "Venta de Código Fuente", en: "Source Code Ownership" },
-                        desc: { es: "Sea el dueño absoluto de su propiedad intelectual. Entregas por hitos verificados.", en: "Be the absolute owner of your intellectual property. Deliveries by verified milestones." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Suscripción", en: "SaaS Model" },
-                        title: { es: "Plataformas ERP & MRP Alquiladas", en: "Rented ERP & MRP Platforms" },
-                        desc: { es: "Infraestructura limpia, corrección continua de bugs y alojamiento local blindado.", en: "Clean infrastructure, continuous bug fixing, and armored local hosting." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "FinTech IA", en: "AI FinTech" },
-                        title: { es: "Motores Automáticos de Scoring", en: "Automated Scoring Engines" },
-                        desc: { es: "Pasarelas de pago y análisis predictivo de riesgo transaccional de alta precisión.", en: "Payment gateways and high-precision transactional risk predictive analysis." }
-                    }
-                ]
-            },
-
-            support: {
-                id: 'support',
-                cleanName: 'support',
-                icon: 'fa-headset',
-                summary: {
-                    es: "Supervisión y gobernanza externa de infraestructura TI, garantizando continuidad del negocio bajo control soberano mediante servicios gestionados y centros remotos.",
-                    en: "External supervision and governance of IT infrastructure, ensuring business continuity under sovereign control through managed services and remote centers."
+                owncode: {
+                    title: "SoftW builder Services",
+                    summary: "Protected intellectual property. Construction of clean and parameterized code to run on proprietary servers, preventing corporate espionage or uncontrolled dependence on third-party clouds.",
+                    icon: "fa-code",
+                    items: [
+                        { title: "Core ERP Systems", desc: "Development and implementation of Enterprise Resource Planning (ERP) systems. We unify your financial, logistics, and human resources operations under a single high-security platform hosted on your servers.", icon: "fa-cubes" },
+                        { title: "Customer Relationship Management (CRM)", desc: "Centralized corporate platforms for customer relationship management. Designed to operate on-premise, protecting your company's most sensitive and confidential commercial database.", icon: "fa-users" },
+                        { title: "Production Planning (MRP)", desc: "Native industrial software for inventory control, traceability, and manufacturing planning. We achieve perfect synchronization between the physical production floor and the management control layer.", icon: "fa-industry" },
+                        { title: "Business Intelligence (BI)", desc: "Injection of advanced analytical engines into your business core. We transform raw transactional data into interactive dashboards for real-time executive decision-making.", icon: "fa-chart-bar" },
+                        { title: "Corporate Mobile Apps", desc: "Custom development of enterprise mobile applications (iOS/Android). We create secure and encrypted interfaces for controlled remote access to the company's central systems by your staff.", icon: "fa-mobile-screen" },
+                        { title: "FinTech Architectures", desc: "Construction of financial software ecosystems and transactional payment gateways. Robust and auditable code that strictly complies with banking security and anti-fraud standards.", icon: "fa-wallet" },
+                        { title: "Autonomous Smart Agents", desc: "Integration of Artificial Intelligence modules (Agents) capable of executing continuous administrative, commercial, and operational support tasks without constant human intervention.", icon: "fa-user-astronaut" },
+                        { title: "Risk Scoring Systems", desc: "Custom algorithms for credit risk and financial behavior analysis. High-precision algorithmic calculation engines hosted directly on your private infrastructure.", icon: "fa-scale-balanced" },
+                        { title: "Secure SaaS Model", desc: "Rental of corporate software operating on high-security nodes. This model includes continuous maintenance, bug fixes, and infrastructure updates under a predictable fee.", icon: "fa-cloud-arrow-up" },
+                        { title: "Custom Factory (Code Sale)", desc: "Turnkey technological development. After construction, we deliver 100% of the source code and intellectual property, ensuring you are the absolute owner of the technology driving your business.", icon: "fa-file-code" }
+                    ]
                 },
-                links: [
-                    { id: 'strategy', icon: 'fa-chess-knight', title: {es: "iT-Strategy", en: "iT-Strategy"}, content: {
-                        es: "Trazamos la estrategia tecnológica a nivel de dirección. Definimos el plan maestro asegurando alineamiento absoluto con objetivos corporativos.",
-                        en: "We outline technological strategy at the executive level. We define the master plan ensuring absolute alignment with corporate objectives."
-                    }},
-                    { id: 'managed', icon: 'fa-shield-alt', title: {es: "ManagedServices", en: "ManagedServices"}, content: {
-                        es: "Operación y soporte técnico continuo. Asumimos la vigilancia perpetua bajo certificaciones de continuidad, evitando altos costes de personal interno.",
-                        en: "Continuous operation and technical support. We assume perpetual surveillance under continuity certifications, avoiding high internal staff costs."
-                    }},
-                    { id: 'soc', icon: 'fa-satellite-dish', title: {es: "SOC / NOC Operations", en: "SOC / NOC Operations"}, content: {
-                        es: "Centros avanzados de operaciones. Supervisamos proactivamente redes (NOC) y seguridad (SOC) bloqueando amenazas y conexiones no autorizadas 24/7.",
-                        en: "Advanced operations centers. We proactively monitor networks (NOC) and security (SOC) blocking threats and unauthorized connections 24/7."
-                    }}
-                ],
-                banners: [
-                    {
-                        img: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Soporte Perpetuo", en: "Perpetual Support" },
-                        title: { es: "Monitoreo 24/7 SOC/NOC", en: "24/7 SOC/NOC Monitoring" },
-                        desc: { es: "Evite contratar personal interno costoso; asignamos técnicos dedicados a su cuenta.", en: "Avoid expensive internal hiring; we allocate dedicated remote technicians to your account." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Certificaciones", en: "Certifications" },
-                        title: { es: "Gobernanza de Seguridad ISO", en: "ISO Security Governance" },
-                        desc: { es: "Marcos ágiles hacia la certificación legal de sus sistemas de datos (ISO 27001 / 27018).", en: "Agile frameworks guiding you to legal certification of your data systems (ISO 27001 / 27018)." }
-                    },
-                    {
-                        img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
-                        offer: { es: "Gobernanza Código", en: "Code Governance" },
-                        title: { es: "SoveranCode Framework", en: "SoveranCode Framework" },
-                        desc: { es: "Aseguramos que el software desplegado cumpla con rigurosas políticas de riesgo.", en: "We ensure that deployed software strictly complies with documented risk policies." }
-                    }
-                ]
+                support: {
+                    title: "Servs Services",
+                    summary: "External supervision and governance of IT infrastructure and information security (ISMS), ensuring business continuity under permanent sovereign control through managed services and remote centers.",
+                    icon: "fa-headset",
+                    items: [
+                        { title: "Strategic IT Consulting", desc: "We outline the technological strategy at the executive level. We analyze business logic and define the systems master plan, ensuring absolute alignment with corporate objectives.", icon: "fa-lightbulb" },
+                        { title: "Project Management Office (PMO)", desc: "Supervision of software developments and complex cloud or IoT deployments. We manage risks and control delivery milestones under strict Service Level Agreements (SLAs).", icon: "fa-tasks" },
+                        { title: "Deployment & Implementation", desc: "Expert technical direction of field deployment. We ensure that the transition from theoretical strategy to physical and logical infrastructure is executed without operational interruptions.", icon: "fa-tools" },
+                        { title: "Managed Services (Support)", desc: "Continuous operation and technical support. We assume the perpetual surveillance and maintenance of your infrastructure under rigorous continuity certifications, avoiding the high costs of hiring internal staff.", icon: "fa-life-ring" },
+                        { title: "Corporate Liaison", desc: "Direct and confidential channel with our expert consultants for the coordination of initial audits, network vulnerability assessments, and quotation of strategic frameworks.", icon: "fa-handshake" },
+                        { title: "Alliance Ecosystem", desc: "Management of certified alliances. We integrate joint solutions with major global hardware and cloud service manufacturers to ensure a world-class technological ecosystem.", icon: "fa-globe" },
+                        { title: "IT Distribution & Logistics", desc: "Logistic orchestration for the provision of technological assets. We guarantee the timely and secure arrival of critical components and specialized equipment to your operational facilities.", icon: "fa-truck" },
+                        { title: "Knowledge Transfer", desc: "IT training and culture programs. We train your company's operational and managerial staff in the safe use of implemented infrastructures and cybersecurity awareness.", icon: "fa-chalkboard-user" },
+                        { title: "Sovereign Code Governance", desc: "Specialized audit certifying intellectual property. We guarantee that the source code of custom developments remains unaltered, completely private, and under the sovereign control of the company.", icon: "fa-scroll" },
+                        { title: "ISO Regulatory Implementation", desc: "Consulting catalog for legal certification. We have agile methodologies to guide your infrastructures towards ISO 27001 (Security), ISO 27018 (Privacy), ISO 9001, and ISO 20000 certification.", icon: "fa-stamp" },
+                        { title: "Remote SOC / NOC Operations", desc: "Advanced operations centers. We proactively monitor your networks (NOC) and information security (SOC) via remote telemetry, blocking threats and unauthorized connections 24/7.", icon: "fa-satellite-dish" }
+                    ]
+                }
             }
         };
 
-        const listSubdomains = ['edgecom', 'aidomot', 'forensic', 'owncode', 'support'];
+        // ESTADO GLOBAL
+        let currentLang = 'es';
+        let currentSection = 'home';
+        
+        // ELEMENTOS DEL DOM
+        const mainContent = document.getElementById('main-content');
+        const sidebarMenu = document.getElementById('sidebar-menu');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobile-overlay');
+        const collapseIcon = document.getElementById('collapse-icon');
 
-        /**
-         * INICIALIZADOR DE LA APLICACIÓN
-         */
-        document.addEventListener('DOMContentLoaded', () => {
-            renderSubnav();
-            loadContent('home', 'main');
-        });
-
-        /**
-         * INTERRUPTOR DE IDIOMA (Alterna ES/EN dinámicamente)
-         */
-        function toggleLanguage() {
-            appState.lang = appState.lang === 'es' ? 'en' : 'es';
-            document.getElementById('lang-text').innerText = appState.lang.toUpperCase();
-            
-            // Re-renderizado total sin parpadeos ni recargas completas
-            renderSubnav(); 
-            loadContent(appState.currentSub, appState.currentLink);
-        }
-
-        /**
-         * MANIPULADOR DEL MENÚ LATERAL MÓVIL (Alineado a la izquierda)
-         */
-        function toggleMobileMenu() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('sidebar-overlay').classList.toggle('active');
-        }
-
-        function closeMobileMenu() {
-            document.getElementById('sidebar').classList.remove('active');
-            document.getElementById('sidebar-overlay').classList.remove('active');
-        }
-
-        /**
-         * RENDERIZADOR DE ENLACES DE SUBDOMINIO (Limpiados de la extensión .comsercom.com)
-         */
-        function renderSubnav() {
-            const container = document.getElementById('subnav-container');
-            container.innerHTML = ''; 
-            
-            listSubdomains.forEach(sub => {
-                const a = document.createElement('a');
-                a.href = "#";
-                a.innerText = siteData[sub].cleanName || sub;
-                a.className = appState.currentSub === sub ? 'active' : '';
-                
-                a.onclick = (e) => {
-                    e.preventDefault();
-                    loadContent(sub, 'main');
-                    Array.from(container.children).forEach(child => child.classList.remove('active'));
-                    a.classList.add('active');
-                };
-                container.appendChild(a);
-            });
-        }
-
-        /**
-         * MOTOR DE NAVEGACIÓN SINGLE PAGE (SPA) - CARGA DINÁMICA DE CONTENIDOS
-         */
-        function loadContent(sub, linkId) {
-            appState.currentSub = sub;
-            appState.currentLink = linkId;
-            const lg = appState.lang;
-            const data = siteData[sub];
-
-            // 1. Orquestación y actualización del menú lateral vertical (Izquierda)
-            const sidebarMenu = document.getElementById('sidebar-menu');
-            const sidebarTitle = document.getElementById('sidebar-title');
-            
-            if (sub === 'home') {
-                sidebarTitle.innerText = lg === 'es' ? "PANEL PRINCIPAL" : "MAIN DASHBOARD";
-                sidebarMenu.innerHTML = `
-                    <li><a href="#" class="active" onclick="closeMobileMenu(); event.preventDefault();"><i class="fa-solid fa-house"></i> Overview</a></li>
-                `;
-                Array.from(document.getElementById('subnav-container').children).forEach(c => c.classList.remove('active'));
-            } else {
-                sidebarTitle.innerText = lg === 'es' ? "ESPECIALIDADES" : "SPECIALTIES";
-                let linksHTML = `
-                    <li>
-                        <a href="#" class="${linkId === 'main' ? 'active' : ''}" onclick="loadContent('${sub}', 'main'); event.preventDefault();">
-                            <i class="fa-solid fa-layer-group"></i> ${lg === 'es' ? 'Resumen División' : 'Division Summary'}
-                        </a>
-                    </li>
-                `;
-                data.links.forEach(l => {
-                    const isActive = linkId === l.id ? 'active' : '';
-                    linksHTML += `
-                        <li>
-                            <a href="#" class="${isActive}" onclick="loadContent('${sub}', '${l.id}'); event.preventDefault();">
-                                <i class="fa-solid ${l.icon}"></i> ${l.title[lg]}
-                            </a>
-                        </li>
-                    `;
-                });
-                sidebarMenu.innerHTML = linksHTML;
-            }
-
-            // 2. Construcción del Layout de Contenido
-            const mainContent = document.getElementById('main-content');
-            let htmlContent = '';
-
-            if (linkId === 'main') {
-                // Vista del Resumen Principal de la división o Home
-                htmlContent = `
-                    <div class="hero-banner">
-                        <div class="hero-text">
-                            <span class="badge-div"><i class="fa-solid ${data.icon}"></i> ${sub === 'home' ? 'COMSERCOM' : data.cleanName.toUpperCase()}</span>
-                            <h1 class="hero-title">${sub === 'home' ? data.title[lg] : (lg === 'es' ? 'Soberanía Lógica de la Información' : 'Logical Information Sovereignty')}</h1>
-                            <p class="hero-desc">${sub === 'home' ? data.content[lg] : data.summary[lg]}</p>
+        // BANNERS COMERCIALES INYECTABLES
+        const commercialHTML = `
+            <div class="commercial-grid">
+                <div class="banner-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cybersecurity" class="banner-img">
+                    <span class="offer-tag">Premium</span>
+                    <div class="banner-content">
+                        <h4>Zero-Trust Nodes</h4>
+                        <p>Despliegue perimetral de seguridad militar para corporaciones.</p>
+                        <div class="banner-action">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-volume-high"></i>
                         </div>
                     </div>
-                `;
-            } else {
-                // Vista de un enlace interno o Especialidad específica
-                const linkData = data.links.find(l => l.id === linkId);
-                htmlContent = `
-                    <div class="main-card">
-                        <span class="badge-div"><i class="fa-solid ${data.icon}"></i> ${data.cleanName.toUpperCase()}</span>
-                        <h2 class="hero-title" style="margin-top:8px; color: var(--primario-neon);"><i class="fa-solid ${linkData.icon}"></i> ${linkData.title[lg]}</h2>
-                        <p class="hero-desc" style="color: var(--texto-claro); margin-top:12px; font-size:13px;">${linkData.content[lg]}</p>
+                </div>
+                <div class="banner-card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hardware" class="banner-img">
+                    <span class="offer-tag">-20% OFF</span>
+                    <div class="banner-content">
+                        <h4>Enterprise Racks</h4>
+                        <p>Optimice su centro de datos local con infraestructura resiliente.</p>
+                        <div class="banner-action">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-volume-high"></i>
+                        </div>
                     </div>
-                `;
-            }
+                </div>
+                <div class="banner-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Data" class="banner-img">
+                    <span class="offer-tag">New AI</span>
+                    <div class="banner-content">
+                        <h4>Local LLM Models</h4>
+                        <p>Integre IA Generativa sin enviar un solo dato a la nube.</p>
+                        <div class="banner-action">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-volume-high"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
 
-            // Inyección Dinámica obligatoria de los 3 Banners Comerciales/Temáticos para rellenar la versión PC
-            htmlContent += `
-                <h3 style="font-size:12px; color: var(--acentos); text-transform:uppercase; letter-spacing:1px; margin-top:10px;">
-                    <i class="fa-solid fa-bolt mr-2"></i> ${lg === 'es' ? 'Soluciones Destacadas & Ofertas Corporativas' : 'Featured Solutions & Corporate Offers'}
-                </h3>
-                <div class="commercial-grid">
+        // IMÁGENES TECNOLÓGICAS PARA LOS SUB-ENLACES
+        const techImages = [
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+        ];
+
+        // INICIALIZACIÓN
+        function init() {
+            renderView(currentSection);
+        }
+
+        // CAMBIO DE IDIOMA
+        function changeLang(lang) {
+            currentLang = lang;
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            // Re-renderizamos en base a si estamos en un detalle o vista general
+            if(mainContent.querySelector('.item-detail-hero')) {
+                // Truco: Si estamos en vista de detalle, hacemos un trigger de la vista padre
+                renderView(currentSection);
+            } else {
+                renderView(currentSection);
+            }
+        }
+
+        // CONTROL SIDEBAR MÓVIL
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // COLLAPSE DINÁMICO (Desktop)
+        function collapseSidebar() {
+            sidebar.classList.toggle('collapsed');
+            document.body.classList.toggle('collapsed-sidebar');
+            if(sidebar.classList.contains('collapsed')) {
+                collapseIcon.classList.remove('fa-chevron-left');
+                collapseIcon.classList.add('fa-chevron-right');
+            } else {
+                collapseIcon.classList.remove('fa-chevron-right');
+                collapseIcon.classList.add('fa-chevron-left');
+            }
+        }
+
+        // ENRUTAMIENTO SPA
+        function navigate(section) {
+            currentSection = section;
+            document.querySelectorAll('.subnav a').forEach(a => a.classList.remove('active'));
+            const activeNav = document.getElementById('subnav-' + section);
+            if(activeNav) activeNav.classList.add('active');
+            
+            if(window.innerWidth < 992) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+            renderView(section);
+        }
+
+        // RENDER DE UN ÍTEM ESPECÍFICO (NUEVO PLAN DE MARKETING)
+        function renderItemView(section, index, element) {
+            event.preventDefault();
+            const item = resumeData[currentLang][section].items[index];
+            if (!item) return;
+
+            // Manejo de estado activo en la barra lateral
+            document.querySelectorAll('#sidebar-menu a').forEach(a => a.classList.remove('active'));
+            if(element) element.classList.add('active');
+
+            // Textos de Marketing según Idioma
+            const mkt = {
+                es: { pro: "Nuestro Compromiso de Clase Mundial", back: "Volver al Panel", t1: "Garant&iacute;a de Seguridad", d1: "Protocolos estrictos de cifrado y aislamiento de datos de extremo a extremo.", t2: "Optimizaci&oacute;n T&eacute;cnica", d2: "Ingenier&iacute;a de precisi&oacute;n orientada al m&aacute;ximo rendimiento operativo.", t3: "Soberan&iacute;a Total", d3: "Usted es el &uacute;nico due&ntilde;o de la infraestructura y c&oacute;digo desplegado." },
+                en: { pro: "Our World-Class Commitment", back: "Back to Dashboard", t1: "Security Guarantee", d1: "Strict encryption protocols and end-to-end data isolation.", t2: "Technical Optimization", d2: "Precision engineering oriented towards maximum operational performance.", t3: "Total Sovereignty", d3: "You are the sole owner of the infrastructure and deployed code." }
+            };
+            const t = mkt[currentLang];
+            const imgUrl = techImages[(index + section.length) % techImages.length];
+
+            let contentHTML = `
+                <button class="back-btn" onclick="renderView('${section}')"><i class="fa-solid fa-arrow-left"></i> ${t.back} ${section.toUpperCase()}</button>
+                <div class="content-header" style="margin-bottom: 20px;">
+                    <h2><i class="fa-solid ${item.icon}" style="color:var(--accent-cyan);"></i> ${item.title}</h2>
+                </div>
+                
+                <div class="item-detail-hero">
+                    <img src="${imgUrl}" alt="${item.title}">
+                    <div class="hero-text-overlay">
+                        <p>${item.desc}</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:40px;">
+                    <h3 style="color:var(--accent-cyan); font-size:20px; font-weight:400; margin-bottom:10px;">${t.pro}</h3>
+                    <div class="marketing-grid">
+                        <div class="marketing-card">
+                            <h4><i class="fa-solid fa-shield-halved" style="color:var(--accent-cyan);"></i> ${t.t1}</h4>
+                            <p>${t.d1}</p>
+                        </div>
+                        <div class="marketing-card">
+                            <h4><i class="fa-solid fa-gear" style="color:var(--accent-cyan);"></i> ${t.t2}</h4>
+                            <p>${t.d2}</p>
+                        </div>
+                        <div class="marketing-card">
+                            <h4><i class="fa-solid fa-flag" style="color:var(--accent-cyan);"></i> ${t.t3}</h4>
+                            <p>${t.d3}</p>
+                        </div>
+                    </div>
+                </div>
             `;
 
-            // Obtenemos los banners correspondientes (si es un sub-enlace usa los de su subdominio base para mantener ofertas robustas)
-            const currentBanners = data.banners || siteData['home'].banners;
+            contentHTML += commercialHTML;
 
-            currentBanners.forEach((b, index) => {
-                htmlContent += `
-                    <div class="banner-item">
-                        <div class="banner-media-box">
-                            <img src="${b.img}" class="banner-img" alt="COMSERCOM Tech">
-                            <span class="offer-tag">${b.offer[lg]}</span>
-                        </div>
-                        <div class="banner-info">
-                            <div>
-                                <h4 class="banner-h3">${b.title[lg]}</h4>
-                                <p class="banner-p">${b.desc[lg]}</p>
-                            </div>
-                            <div class="media-action-bar">
-                                <span><i class="fa-solid fa-play-circle"></i> Interactive Demo</span>
-                                <i class="fa-solid fa-volume-high"></i>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
+            mainContent.classList.remove('fade-in');
+            void mainContent.offsetWidth; // Reflow
+            mainContent.innerHTML = contentHTML;
+            mainContent.classList.add('fade-in');
 
-            htmlContent += `</div>`;
+            // En móvil, cerrarmos el menú al elegir el ítem
+            if(window.innerWidth < 992) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        }
 
-            // Si es la página de inicio, agregamos accesos directos dinámicos en formato mosaico comercial
-            if (sub === 'home') {
-                htmlContent += `
-                    <h3 style="font-size:12px; color: #fff; text-transform:uppercase; letter-spacing:1px; margin-top:30px; border-bottom: 1px solid var(--borde-tech); padding-bottom:8px;">
-                        ${lg === 'es' ? 'Nuestras Divisiones Operativas' : 'Our Operational Divisions'}
-                    </h3>
-                    <div class="commercial-grid" style="margin-top:15px;">
-                `;
-                listSubdomains.forEach(s => {
-                    htmlContent += `
-                        <div class="main-card" style="margin-bottom:0; cursor:pointer; border-left: 3px solid var(--secundario-tech);" onclick="loadContent('${s}', 'main')">
-                            <h4 style="color: var(--primario-neon); font-size:14px; margin-bottom:6px;"><i class="fa-solid ${siteData[s].icon}"></i> ${siteData[s].cleanName.toUpperCase()}</h4>
-                            <p style="font-size:11px; color: var(--texto-oscuro); line-height:1.4;">${siteData[s].summary[lg].substring(0, 95)}...</p>
+        // MOTOR DE RENDERIZADO GENERAL
+        function renderView(section) {
+            const data = resumeData[currentLang][section];
+            if (!data) return;
+
+            // Renderizar Sidebar Links DINÁMICO
+            let sidebarHTML = `
+                <li><a href="#" onclick="navigate('home')" class="${section === 'home' ? 'active' : ''}"><i class="fa-solid fa-house"></i> <span>${currentLang==='es'?'Inicio':'Home'} (Skill)</span></a></li>
+            `;
+            
+            if (section !== 'home') {
+                data.items.forEach((item, index) => {
+                    sidebarHTML += `<li><a href="#" onclick="renderItemView('${section}', ${index}, this)"><i class="fa-solid ${item.icon}"></i> <span>${item.title}</span></a></li>`;
+                });
+            } else {
+                const domains = ['edgecom', 'aidomot', 'forensic', 'owncode', 'support'];
+                domains.forEach(d => {
+                    const icon = resumeData[currentLang][d].icon;
+                    sidebarHTML += `<li><a href="#" onclick="navigate('${d}')"><i class="fa-solid ${icon}"></i> <span>${d}</span></a></li>`;
+                });
+            }
+            sidebarMenu.innerHTML = sidebarHTML;
+
+            // Construir Contenido Principal
+            let contentHTML = `
+                <div class="content-header">
+                    <h2>${section === 'home' ? 'SKILL / MAIN DASHBOARD' : section.toUpperCase()}</h2>
+                    <h3 style="color:var(--text-primary); margin-bottom:10px; font-size:18px;">${data.title}</h3>
+                    <p>${data.summary}</p>
+                </div>
+            `;
+
+            if (data.items && data.items.length > 0) {
+                contentHTML += `<div class="grid-container">`;
+                data.items.forEach((item, index) => {
+                    // Ahora las tarjetas del grid general también pueden llevar a la vista interna
+                    contentHTML += `
+                        <div class="card" style="cursor:pointer;" onclick="renderItemView('${section}', ${index}, null)">
+                            <h3><i class="fa-solid ${item.icon}" style="color:var(--accent-cyan); margin-right:8px;"></i> ${item.title}</h3>
+                            <p>${item.desc}</p>
                         </div>
                     `;
                 });
-                htmlContent += `</div>`;
+                contentHTML += `</div>`;
             }
 
-            // Inyectar el HTML construido y cerrar el menú móvil para evitar bloqueos de pantalla
-            mainContent.innerHTML = htmlContent;
-            closeMobileMenu();
+            contentHTML += commercialHTML;
+
+            mainContent.classList.remove('fade-in');
+            void mainContent.offsetWidth; // Trigger reflow
+            mainContent.innerHTML = contentHTML;
+            mainContent.classList.add('fade-in');
         }
+
+        window.onload = init;
 
        /* ==========================================================================
            WHATSAPP
@@ -957,6 +935,7 @@
         window.open('https://wa.me/59168068040');
     	});
 	});
+
     </script>
 </body>
 </html>
